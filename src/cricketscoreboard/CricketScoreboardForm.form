@@ -36,101 +36,6 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtBat10FirstName" alignment="0" pref="81" max="32767" attributes="0"/>
-                          <Component id="txtBat9FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat8FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat7FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat6FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat3FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat4FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat5FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat2FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat1FirstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtBat11FirstName" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblLastName" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtBat1LastName" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat2LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat3LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat4LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat5LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat6LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat7LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat8LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat9LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat10LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="txtBat11LastName" min="-2" pref="80" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="txtBat5TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="txtBat6TotalScore" min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="txtBat4TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="txtBat3TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="txtBat2TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txtBat11TotalScore" alignment="0" pref="44" max="32767" attributes="0"/>
-                                      <Component id="txtBat10TotalScore" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtBat9TotalScore" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtBat8TotalScore" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtBat7TotalScore" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtBat1TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtBallsFaced10" alignment="0" pref="34" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced8" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtBallsFaced11" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="lblTotalScore" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="txtBallsFaced" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rbnBat1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rbnBat8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbnBat10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="539" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -149,46 +54,25 @@
                           </Group>
                           <Component id="lblBatsman" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtBowAddFName" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="txtBowAddLName" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnAddBowler" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="updateButton" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="txtMatchID" min="-2" pref="87" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="txtUpdate" min="-2" pref="90" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="txtMatchID" min="-2" pref="87" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="btnSet" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnSet" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
@@ -254,7 +138,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="108" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="rbnBowler1" min="-2" max="-2" attributes="0"/>
                                   <Component id="rbnBowler2" min="-2" max="-2" attributes="0"/>
@@ -263,6 +147,176 @@
                                   <Component id="rbnBowler5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="btnReady" min="-2" max="-2" attributes="0"/>
+                                          <Component id="startButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="updateButton" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txtUpdate" min="-2" pref="90" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="btnSecondInn" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtBowAddFName" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="txtBowAddLName" min="-2" pref="70" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnAddBowler" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtOverallScore1" pref="81" max="32767" attributes="0"/>
+                              <Component id="txtBat10FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat9FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat8FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat7FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat6FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat3FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat4FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat5FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat2FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat1FirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtBat11FirstName" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblLastName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtBat1LastName" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat2LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat3LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat4LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat5LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat6LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat7LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat8LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat9LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat10LastName" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="txtBat11LastName" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                              <Component id="txtBat5TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="txtBat6TotalScore" min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="txtBat4TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="txtBat3TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="txtBat2TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txtBat11TotalScore" alignment="0" pref="44" max="32767" attributes="0"/>
+                                              <Component id="txtBat10TotalScore" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtBat9TotalScore" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtBat8TotalScore" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtBat7TotalScore" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="txtBat1TotalScore" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="txtBallsFaced10" alignment="0" pref="34" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced9" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced8" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced7" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced6" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced5" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBallsFaced11" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblTotalScore" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="txtBallsFaced" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtTotalWides1" max="32767" attributes="0"/>
+                                          <Component id="jLabel13" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              <Component id="txtTotalNoballs1" min="-2" pref="61" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel11" max="32767" attributes="0"/>
+                                  <Component id="txtTotalOvers1" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtTotalWickets1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="rbnBat1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbnBat10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtRunstoWin" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -429,7 +483,6 @@
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="txtBat8FirstName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -458,6 +511,11 @@
                   </Group>
                   <Component id="rbnBat10" min="-2" max="-2" attributes="0"/>
                   <Component id="txtBallsFaced10" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="updateButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReady" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -469,12 +527,27 @@
                   </Group>
                   <Component id="rbnBat11" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="108" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="updateButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtOverallScore1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTotalOvers1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTotalWickets1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="startButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTotalWides1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTotalNoballs1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSecondInn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRunstoWin" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="141" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -697,6 +770,7 @@
     <Component class="javax.swing.JTextField" name="txtUpdate">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUpdateActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUpdateKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="txtBallsFaced">
@@ -771,56 +845,89 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat1">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat2">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat2ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat3">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat3ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat4">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat4ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat5">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat5ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat6">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat6ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat7">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat7ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat8">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat8ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat9">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat9ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat10">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat10ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBat11">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBat11ActionPerformed"/>
       </Events>
@@ -1066,23 +1173,137 @@
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBowler1">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBowler1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBowler2">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBowler2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBowler3">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBowler3ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBowler4">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBowler4ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbnBowler5">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbnBowler5ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Score"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtOverallScore1">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Overs"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTotalOvers1">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Wickets"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTotalWickets1">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="startButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Start Game"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnReady">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ready"/>
+        <Property name="actionCommand" type="java.lang.String" value="Ready"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReadyActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Wides"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Noballs"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTotalWides1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTotalNoballs1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSecondInn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Second Innings"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSecondInnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel15">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Runs to Win"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtRunstoWin">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

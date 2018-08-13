@@ -28,13 +28,20 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private Integer batsmanID;
     private Integer bowlersID;
+    private Integer totalScoreID;
+    private Integer extrasID;
+    private int tWides = 0;
+    private int tNoballs = 0;
     private int ballCounter = 0;
+    private int tBallCounter = 0;
     private String firstName;
     private String lastName;
     private String bowledBy;
     private int i = 1;
     private int j = 1;
     private boolean isFirstInnings = true;
+    private int totalScore = 0;
+    private int tWickets = 0;
     private int totalScore1 = 0;
     private int totalScore2 = 0;
     private int totalScore3 = 0;
@@ -51,6 +58,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
     private int runsConceded3 = 0;
     private int runsConceded4 = 0;
     private int runsConceded5 = 0;
+    private int tOvers = 0;
     private int overs1 = 0;
     private int overs2 = 0;
     private int overs3 = 0;
@@ -206,6 +214,21 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         rbnBowler3 = new javax.swing.JRadioButton();
         rbnBowler4 = new javax.swing.JRadioButton();
         rbnBowler5 = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        txtOverallScore1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtTotalOvers1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txtTotalWickets1 = new javax.swing.JTextField();
+        startButton = new javax.swing.JButton();
+        btnReady = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtTotalWides1 = new javax.swing.JTextField();
+        txtTotalNoballs1 = new javax.swing.JTextField();
+        btnSecondInn = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        txtRunstoWin = new javax.swing.JTextField();
 
         jRadioButton6.setText("jRadioButton6");
 
@@ -324,6 +347,11 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtUpdateActionPerformed(evt);
             }
         });
+        txtUpdate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUpdateKeyTyped(evt);
+            }
+        });
 
         txtBallsFaced.setText("Balls Faced");
 
@@ -360,66 +388,77 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         txtBallsFaced11.setEditable(false);
         txtBallsFaced11.setText("0");
 
+        rbnBat1.setEnabled(false);
         rbnBat1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat1ActionPerformed(evt);
             }
         });
 
+        rbnBat2.setEnabled(false);
         rbnBat2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat2ActionPerformed(evt);
             }
         });
 
+        rbnBat3.setEnabled(false);
         rbnBat3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat3ActionPerformed(evt);
             }
         });
 
+        rbnBat4.setEnabled(false);
         rbnBat4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat4ActionPerformed(evt);
             }
         });
 
+        rbnBat5.setEnabled(false);
         rbnBat5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat5ActionPerformed(evt);
             }
         });
 
+        rbnBat6.setEnabled(false);
         rbnBat6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat6ActionPerformed(evt);
             }
         });
 
+        rbnBat7.setEnabled(false);
         rbnBat7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat7ActionPerformed(evt);
             }
         });
 
+        rbnBat8.setEnabled(false);
         rbnBat8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat8ActionPerformed(evt);
             }
         });
 
+        rbnBat9.setEnabled(false);
         rbnBat9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat9ActionPerformed(evt);
             }
         });
 
+        rbnBat10.setEnabled(false);
         rbnBat10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat10ActionPerformed(evt);
             }
         });
 
+        rbnBat11.setEnabled(false);
         rbnBat11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBat11ActionPerformed(evt);
@@ -552,23 +591,94 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
             }
         });
 
+        rbnBowler1.setEnabled(false);
         rbnBowler1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBowler1ActionPerformed(evt);
             }
         });
 
+        rbnBowler2.setEnabled(false);
+        rbnBowler2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnBowler2ActionPerformed(evt);
+            }
+        });
+
+        rbnBowler3.setEnabled(false);
         rbnBowler3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBowler3ActionPerformed(evt);
             }
         });
 
+        rbnBowler4.setEnabled(false);
         rbnBowler4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnBowler4ActionPerformed(evt);
             }
         });
+
+        rbnBowler5.setEnabled(false);
+        rbnBowler5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnBowler5ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Total Score");
+
+        txtOverallScore1.setEditable(false);
+        txtOverallScore1.setText("0");
+
+        jLabel11.setText("Total Overs");
+
+        txtTotalOvers1.setEditable(false);
+        txtTotalOvers1.setText("0");
+
+        jLabel12.setText("Total Wickets");
+
+        txtTotalWickets1.setEditable(false);
+        txtTotalWickets1.setText("0");
+
+        startButton.setText("Start Game");
+        startButton.setEnabled(false);
+        startButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startButtonActionPerformed(evt);
+            }
+        });
+
+        btnReady.setText("Ready");
+        btnReady.setActionCommand("Ready");
+        btnReady.setEnabled(false);
+        btnReady.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReadyActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Total Wides");
+
+        jLabel14.setText("Total Noballs");
+
+        txtTotalWides1.setText("0");
+        txtTotalWides1.setEnabled(false);
+
+        txtTotalNoballs1.setText("0");
+        txtTotalNoballs1.setEnabled(false);
+
+        btnSecondInn.setText("Second Innings");
+        btnSecondInn.setEnabled(false);
+        btnSecondInn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSecondInnActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Runs to Win");
+
+        txtRunstoWin.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -577,86 +687,6 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtBat10FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                            .addComponent(txtBat9FirstName)
-                            .addComponent(txtBat8FirstName)
-                            .addComponent(txtBat7FirstName)
-                            .addComponent(txtBat6FirstName)
-                            .addComponent(txtBat3FirstName)
-                            .addComponent(txtBat4FirstName)
-                            .addComponent(txtBat5FirstName)
-                            .addComponent(txtBat2FirstName)
-                            .addComponent(txtBat1FirstName)
-                            .addComponent(txtBat11FirstName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLastName)
-                            .addComponent(txtBat1LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat2LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat3LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat4LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat5LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat6LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat7LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat8LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat9LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat10LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBat11LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txtBat5TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtBat6TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtBat4TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtBat3TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtBat2TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtBat11TotalScore, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                                        .addComponent(txtBat10TotalScore, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtBat9TotalScore, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtBat8TotalScore, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtBat7TotalScore, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(txtBat1TotalScore, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(57, 57, 57)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtBallsFaced10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                                    .addComponent(txtBallsFaced9, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced8, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced7, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced5, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBallsFaced11)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTotalScore)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtBallsFaced)))
-                        .addGap(124, 124, 124)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbnBat1)
-                                    .addComponent(rbnBat2))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbnBat8)
-                                    .addComponent(rbnBat7)
-                                    .addComponent(rbnBat6)
-                                    .addComponent(rbnBat5)
-                                    .addComponent(rbnBat4)
-                                    .addComponent(rbnBat3)
-                                    .addComponent(rbnBat11)
-                                    .addComponent(rbnBat9)
-                                    .addComponent(rbnBat10))
-                                .addGap(0, 539, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -672,40 +702,23 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnAdd))
                             .addComponent(lblBatsman))
-                        .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtBowAddFName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel9)
-                                .addGap(24, 24, 24)
-                                .addComponent(txtBowAddLName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddBowler)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel1)
                                         .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel5)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(updateButton)
+                                                .addComponent(txtMatchID, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(txtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel5)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(txtMatchID, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(btnSet)))
-                                                .addGap(40, 40, 40)
-                                                .addComponent(jLabel6)
-                                                .addGap(29, 29, 29)
-                                                .addComponent(jLabel7))))
+                                                .addComponent(btnSet)))
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel6)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jLabel7))
                                     .addComponent(jLabel2)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3)
@@ -760,14 +773,149 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                                                 .addComponent(txtBowOversBowled5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(txtBowWickets5)))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rbnBowler1)
                                     .addComponent(rbnBowler2)
                                     .addComponent(rbnBowler3)
                                     .addComponent(rbnBowler4)
                                     .addComponent(rbnBowler5))
-                                .addGap(16, 16, 16))))))
+                                .addGap(16, 16, 16))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnReady)
+                                            .addComponent(startButton))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(updateButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(txtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(btnSecondInn)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtBowAddFName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel9)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(txtBowAddLName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAddBowler)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtOverallScore1, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                                .addComponent(txtBat10FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat9FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat8FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat7FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat6FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat3FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat4FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat5FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat2FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat1FirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBat11FirstName, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblLastName)
+                                    .addComponent(txtBat1LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat2LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat3LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat4LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat5LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat6LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat7LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat8LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat9LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat10LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBat11LastName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(txtBat5TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtBat6TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtBat4TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtBat3TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtBat2TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(txtBat11TotalScore, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                                                .addComponent(txtBat10TotalScore, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtBat9TotalScore, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtBat8TotalScore, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtBat7TotalScore, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addComponent(txtBat1TotalScore, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(57, 57, 57)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(txtBallsFaced10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                                            .addComponent(txtBallsFaced9, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced8, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced7, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced6, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced2, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced1, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced3, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced4, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced5, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtBallsFaced11)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblTotalScore)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(txtBallsFaced))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(98, 98, 98)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtTotalWides1)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel14))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtTotalNoballs1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtTotalOvers1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jLabel12))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtTotalWickets1)))))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbnBat1)
+                                    .addComponent(rbnBat2))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(rbnBat8)
+                                    .addComponent(rbnBat7)
+                                    .addComponent(rbnBat6)
+                                    .addComponent(rbnBat5)
+                                    .addComponent(rbnBat4)
+                                    .addComponent(rbnBat3)
+                                    .addComponent(rbnBat11)
+                                    .addComponent(rbnBat9)
+                                    .addComponent(rbnBat10)
+                                    .addComponent(txtRunstoWin, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -900,7 +1048,6 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(btnAddBowler))
                         .addGap(5, 5, 5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtBat8FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -923,7 +1070,11 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                         .addComponent(txtBat10LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtBat10TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rbnBat10)
-                    .addComponent(txtBallsFaced10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBallsFaced10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(updateButton)
+                        .addComponent(txtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnReady)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -932,11 +1083,25 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                         .addComponent(txtBat11TotalScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtBallsFaced11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(rbnBat11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(updateButton)
-                    .addComponent(txtUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82))
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtOverallScore1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTotalOvers1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTotalWickets1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(startButton)
+                    .addComponent(txtTotalWides1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTotalNoballs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSecondInn)
+                    .addComponent(txtRunstoWin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("CricketScoreboard");
@@ -964,7 +1129,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String update = txtUpdate.getText();
-        
+           
         try
         {
           
@@ -979,9 +1144,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                   if (update.equals("out"))
                   {
                         rbnBat1.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced1 = ballsFaced1 + 1; 
                         ballsFaced = Integer.toString(ballsFaced1);
                         txtBallsFaced1.setText(ballsFaced);
+                         getTScore = txtBat1TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1002,9 +1171,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat2.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced2 = ballsFaced2 + 1; 
                         ballsFaced = Integer.toString(ballsFaced2);
                         txtBallsFaced2.setText(ballsFaced);
+                         getTScore = txtBat2TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1023,9 +1196,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat3.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced3 = ballsFaced3 + 1; 
                         ballsFaced = Integer.toString(ballsFaced3);
                         txtBallsFaced3.setText(ballsFaced);
+                         getTScore = txtBat3TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1044,9 +1221,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat4.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced4 = ballsFaced4 + 1; 
                         ballsFaced = Integer.toString(ballsFaced4);
                         txtBallsFaced4.setText(ballsFaced);
+                         getTScore = txtBat4TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1065,9 +1246,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat5.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced5 = ballsFaced5 + 1; 
                         ballsFaced = Integer.toString(ballsFaced5);
                         txtBallsFaced5.setText(ballsFaced);
+                         getTScore = txtBat5TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1086,9 +1271,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat6.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced6 = ballsFaced6 + 1; 
                         ballsFaced = Integer.toString(ballsFaced6);
                         txtBallsFaced6.setText(ballsFaced);
+                         getTScore = txtBat6TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1107,9 +1296,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat7.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced7 = ballsFaced7 + 1; 
                         ballsFaced = Integer.toString(ballsFaced7);
                         txtBallsFaced7.setText(ballsFaced);
+                         getTScore = txtBat7TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1128,9 +1321,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat8.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced8 = ballsFaced8 + 1; 
                         ballsFaced = Integer.toString(ballsFaced8);
                         txtBallsFaced8.setText(ballsFaced);
+                         getTScore = txtBat8TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1149,9 +1346,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat9.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced9 = ballsFaced9 + 1; 
                         ballsFaced = Integer.toString(ballsFaced9);
                         txtBallsFaced9.setText(ballsFaced);
+                         getTScore = txtBat9TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1170,9 +1371,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                  if (update.equals("out"))
                   {
                         rbnBat10.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced10 = ballsFaced10 + 1; 
                         ballsFaced = Integer.toString(ballsFaced10);
                         txtBallsFaced10.setText(ballsFaced);
+                         getTScore = txtBat10TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                  
@@ -1191,9 +1396,13 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 if (update.equals("out"))
                   {
                         rbnBat11.setVisible(false);
+                        updateButton.setEnabled(false);
                         ballsFaced11 = ballsFaced11 + 1; 
                         ballsFaced = Integer.toString(ballsFaced11);
                         txtBallsFaced11.setText(ballsFaced);
+                        getTScore = txtBat11TotalScore.getText();
+                        isOut = "true";
+                        readyFunction();
                         break;
                   }
                 
@@ -1237,7 +1446,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         CloseableHttpResponse response = client.execute(request);
         client.close();
         
-    System.out.println("testbo2l");
+    
         }
         catch(Exception e)
         {
@@ -1245,7 +1454,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         
         try 
         {
-            System.out.println("testbowl");
+            
             String runsConceded = ""; 
             String wickets = "0";
             String getRC = "";
@@ -1267,9 +1476,71 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                     String overs1str = Integer.toString(overs1);
                     txtBowOversBowled1.setText(overs1str);
                     getOB = txtBowOversBowled1.getText();
+                    rbnBowler1.setSelected(false);
+                    rbnBowler2.setEnabled(true);
+                    rbnBowler3.setEnabled(true);
+                    rbnBowler4.setEnabled(true);
+                    rbnBowler5.setEnabled(true);
                     break;
-                    // DESELECT ALL RADIO BUTTON FOR BOWLER. ENABLE ALL RADIO BUTTONS
+                    
+                    case 2:
+                        
+                    overs2 = Integer.parseInt(txtBowOversBowled2.getText());
+                    overs2 = overs2 + 1;
+                    String overs2str = Integer.toString(overs2);
+                    txtBowOversBowled2.setText(overs2str);
+                    getOB = txtBowOversBowled2.getText();
+                    rbnBowler1.setEnabled(true);
+                    rbnBowler2.setSelected(false);
+                    rbnBowler3.setEnabled(true);
+                    rbnBowler4.setEnabled(true);
+                    rbnBowler5.setEnabled(true);
+                    break;
+                    
+                    case 3:
+                        
+                    overs3 = Integer.parseInt(txtBowOversBowled3.getText());
+                    overs3 = overs3 + 1;
+                    String overs3str = Integer.toString(overs3);
+                    txtBowOversBowled3.setText(overs3str);
+                    getOB = txtBowOversBowled3.getText();
+                    rbnBowler1.setEnabled(true);
+                    rbnBowler2.setEnabled(true);
+                    rbnBowler3.setSelected(false);
+                    rbnBowler4.setEnabled(true);
+                    rbnBowler5.setEnabled(true);
+                    break;
+                    
+                    case 4:
+                        
+                    overs4 = Integer.parseInt(txtBowOversBowled4.getText());
+                    overs4 = overs4 + 1;
+                    String overs4str = Integer.toString(overs4);
+                    txtBowOversBowled4.setText(overs4str);
+                    getOB = txtBowOversBowled4.getText();
+                    rbnBowler1.setEnabled(true);
+                    rbnBowler2.setEnabled(true);
+                    rbnBowler3.setEnabled(true);
+                    rbnBowler4.setSelected(false);
+                    rbnBowler5.setEnabled(true);
+                    break;
+                    
+                    case 5:
+                        
+                    overs5 = Integer.parseInt(txtBowOversBowled5.getText());
+                    overs5 = overs5 + 1;
+                    String overs5str = Integer.toString(overs5);
+                    txtBowOversBowled5.setText(overs5str);
+                    getOB = txtBowOversBowled5.getText();
+                    rbnBowler1.setEnabled(true);
+                    rbnBowler2.setEnabled(true);
+                    rbnBowler3.setEnabled(true);
+                    rbnBowler4.setEnabled(true);
+                    rbnBowler5.setSelected(false);
+                    break;
+                     }
                 }
+                
             switch(bowlersID)
             {
                 case 1: 
@@ -1289,6 +1560,78 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                     txtBowRunsConceded1.setText(runsConceded);
                     getRC = txtBowRunsConceded1.getText();
                     break;
+                    
+                    case 2: 
+                    
+                    if (update.equals("out"))
+                    {
+                        wickets2 = wickets2 + 1; 
+                        wickets = Integer.toString(wickets2);
+                        txtBowWickets2.setText(wickets);
+                        break;
+                  } 
+                    
+                   
+                    
+                    runsConceded2 = runsConceded2 + Integer.parseInt(update);
+                    runsConceded = Integer.toString(runsConceded2);
+                    txtBowRunsConceded2.setText(runsConceded);
+                    getRC = txtBowRunsConceded2.getText();
+                    break;
+                    
+                    case 3: 
+                    
+                    if (update.equals("out"))
+                    {
+                        wickets3 = wickets3 + 1; 
+                        wickets = Integer.toString(wickets3);
+                        txtBowWickets3.setText(wickets);
+                        break;
+                  } 
+                    
+                   
+                    
+                    runsConceded3 = runsConceded3 + Integer.parseInt(update);
+                    runsConceded = Integer.toString(runsConceded3);
+                    txtBowRunsConceded3.setText(runsConceded);
+                    getRC = txtBowRunsConceded3.getText();
+                    break;
+                    
+                    case 4: 
+                    
+                    if (update.equals("out"))
+                    {
+                        wickets4 = wickets4 + 1; 
+                        wickets = Integer.toString(wickets4);
+                        txtBowWickets4.setText(wickets);
+                        break;
+                  } 
+                    
+                   
+                    
+                    runsConceded4 = runsConceded4 + Integer.parseInt(update);
+                    runsConceded = Integer.toString(runsConceded4);
+                    txtBowRunsConceded4.setText(runsConceded);
+                    getRC = txtBowRunsConceded4.getText();
+                    break;
+                    
+                    case 5: 
+                    
+                    if (update.equals("out"))
+                    {
+                        wickets5 = wickets5 + 1; 
+                        wickets = Integer.toString(wickets5);
+                        txtBowWickets5.setText(wickets);
+                        break;
+                  } 
+                    
+                   
+                    
+                    runsConceded5 = runsConceded5 + Integer.parseInt(update);
+                    runsConceded = Integer.toString(runsConceded5);
+                    txtBowRunsConceded5.setText(runsConceded);
+                    getRC = txtBowRunsConceded5.getText();
+                    break;
             }
             
          CloseableHttpClient client = HttpClients.createDefault();
@@ -1307,24 +1650,161 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         bowler.setRunsConceded(getRC);
         bowler.setOversBowled(getOB);
         
-        System.out.println("lol");
+        
         String jsonInString = gson.toJson(bowler);
         
          StringEntity entity = new StringEntity(jsonInString);
         request.setEntity(entity);
         request.setHeader("Accept", "application/json");
         request.setHeader("Content-type", "application/json");
-        System.out.println("lol2");
+      
+        
+        CloseableHttpResponse response = client.execute(request);
+        client.close();        
+       }
+        
+        catch(Exception e)
+        {
+            
+        }
+        
+        try {
+            
+        String tScore = "";
+        String getTScore = "";
+        String totWickets = "";
+        String getTwickets = "";
+        String getTotOv = "";
+        
+        if (!update.equals("nb") || !update.equals("w"))
+                tBallCounter++;
+            
+                if (tBallCounter == 6)
+                {
+                    tBallCounter = 0;
+                    
+                    tOvers = Integer.parseInt(txtTotalOvers1.getText());
+                    tOvers = tOvers + 1;
+                    String tOversStr = Integer.toString(tOvers);
+                    txtTotalOvers1.setText(tOversStr);
+                    getTotOv = txtTotalOvers1.getText();
+                    JOptionPane.showMessageDialog(null, "Over is up! Next bowler");
+                }
+                
+         if (update.equals("out"))
+        {
+            tWickets = tWickets + 1;
+            totWickets = Integer.toString(tWickets);
+            txtTotalWickets1.setText(totWickets);
+            getTwickets = txtTotalWickets1.getText();
+            JOptionPane.showMessageDialog(null, "Batman is out! Bring in the next batsman");
+        }
+            
+         if (getTotOv.equals("50"))
+         {
+                JOptionPane.showMessageDialog(null, "Innings is over! Please bring in the next team");
+                updateButton.setEnabled(false);
+                btnSecondInn.setEnabled(true);
+                
+         }
+         if (totWickets.equals("10"))
+         {
+                JOptionPane.showMessageDialog(null, "Innings is over! Please bring in the next team");
+                updateButton.setEnabled(false);
+                btnSecondInn.setEnabled(true);
+         }
+         
+        totalScore = totalScore + Integer.parseInt(update);
+        tScore = Integer.toString(totalScore);
+        txtOverallScore1.setText(tScore);
+        getTScore = txtOverallScore1.getText();
+        
+        
+            
+            
+         CloseableHttpClient client = HttpClients.createDefault();
+         HttpPut request = new HttpPut("http://localhost:8080/totalscore/update") ;
+         
+         String matchID = txtMatchID.getText();
+         
+        Gson gson = new Gson();
+        TotalScore totsScore = new TotalScore();
+        
+       
+        totsScore.setTotalScoreID(totalScoreID);
+        totsScore.setMatchID(matchID);
+        totsScore.setTotalScore(getTScore);
+        totsScore.setTotalWickets(getTwickets);
+        totsScore.setTotalOvers(getTotOv);
+  
+        String jsonInString = gson.toJson(totsScore);
+        
+         StringEntity entity = new StringEntity(jsonInString);
+        request.setEntity(entity);
+        request.setHeader("Accept", "application/json");
+        request.setHeader("Content-type", "application/json");
+        
         
         CloseableHttpResponse response = client.execute(request);
         client.close();
-        System.out.println("lol3");
             
-            
-            
-      //  }
         }
-        catch(Exception e)
+        
+        catch (Exception e)
+        {
+            
+        }
+        
+        try {
+            
+            String totWides = "";
+            String totNB = "";
+            
+            
+            if (update.equals("w"))
+            {
+                tWides = tWides + 1;
+            totWides = Integer.toString(tWides);
+            txtTotalWides1.setText(totWides);
+ 
+            }
+            
+            if (update.equals("nb"))
+            {
+                tNoballs = tNoballs + 1;
+                totNB = Integer.toString(tNoballs);
+                txtTotalNoballs1.setText(totNB);
+                
+            }
+            
+         CloseableHttpClient client = HttpClients.createDefault();
+         HttpPut request = new HttpPut("http://localhost:8080/extras/update") ;
+         
+         String matchID = txtMatchID.getText();
+         
+        Gson gson = new Gson();
+        Extras extras = new Extras();
+        
+       
+        extras.setExtrasID(extrasID);
+        extras.setMatchID(matchID);
+        extras.setTotalWides(totWides);
+        extras.setTotalNoballs(totNB);
+  
+        String jsonInString = gson.toJson(extras);
+        
+         StringEntity entity = new StringEntity(jsonInString);
+        request.setEntity(entity);
+        request.setHeader("Accept", "application/json");
+        request.setHeader("Content-type", "application/json");
+        
+        
+        CloseableHttpResponse response = client.execute(request);
+        client.close();
+            
+        }
+        
+        catch (Exception e)
         {
             
         }
@@ -1856,9 +2336,12 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBowFirstName5.setText(fName);
                 txtBowLastName5.setText(lName);
                 j++;
-                updateButton.setEnabled(true);
-                break;
-        }
+                startButton.setEnabled(true);
+                btnAddBowler.setEnabled(false);
+                 break;
+            }
+        
+        
         
         }
         catch (Exception e)
@@ -1870,10 +2353,38 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBowler3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler3ActionPerformed
         // TODO add your handling code here:
+            if (isFirstInnings)
+            bowlersID = 3;
+        else 
+            bowlersID = 8;
+        
+        firstName = txtBowFirstName3.getText();
+        lastName = txtBowLastName3.getText();
+        runsConceded3 = Integer.parseInt(txtBowRunsConceded3.getText());
+        
+        
+        rbnBowler1.setEnabled(false);
+        rbnBowler2.setEnabled(false);
+        rbnBowler4.setEnabled(false);
+        rbnBowler5.setEnabled(false);
     }//GEN-LAST:event_rbnBowler3ActionPerformed
 
     private void rbnBowler4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler4ActionPerformed
         // TODO add your handling code here:
+            if (isFirstInnings)
+            bowlersID = 4;
+        else 
+            bowlersID = 9;
+        
+        firstName = txtBowFirstName4.getText();
+        lastName = txtBowLastName4.getText();
+        runsConceded4 = Integer.parseInt(txtBowRunsConceded4.getText());
+        
+        
+        rbnBowler1.setEnabled(false);
+        rbnBowler2.setEnabled(false);
+        rbnBowler3.setEnabled(false);
+        rbnBowler5.setEnabled(false);
     }//GEN-LAST:event_rbnBowler4ActionPerformed
 
     private void rbnBowler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler1ActionPerformed
@@ -1887,20 +2398,190 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         lastName = txtBowLastName1.getText();
         runsConceded1 = Integer.parseInt(txtBowRunsConceded1.getText());
         
-        rbnBowler2.setSelected(false);
-        rbnBowler3.setSelected(false);
-        rbnBowler4.setSelected(false);
-        rbnBowler5.setSelected(false);
+        
+        rbnBowler2.setEnabled(false);
+        rbnBowler3.setEnabled(false);
+        rbnBowler4.setEnabled(false);
+        rbnBowler5.setEnabled(false);
     }//GEN-LAST:event_rbnBowler1ActionPerformed
 
     private void txtBowRunsConceded1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBowRunsConceded1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBowRunsConceded1ActionPerformed
 
-   /* private void dropTable()
-    {
-        if (CricketScoreboardForm.)
-    }*/
+    private void rbnBowler2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler2ActionPerformed
+        // TODO add your handling code here:
+            if (isFirstInnings)
+            bowlersID = 2;
+        else 
+            bowlersID = 7;
+        
+        firstName = txtBowFirstName2.getText();
+        lastName = txtBowLastName2.getText();
+        runsConceded2 = Integer.parseInt(txtBowRunsConceded2.getText());
+        
+        
+        rbnBowler1.setEnabled(false);
+        rbnBowler3.setEnabled(false);
+        rbnBowler4.setEnabled(false);
+        rbnBowler5.setEnabled(false);
+    }//GEN-LAST:event_rbnBowler2ActionPerformed
+
+    private void rbnBowler5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler5ActionPerformed
+        // TODO add your handling code here:
+            if (isFirstInnings)
+            bowlersID = 5;
+        else 
+            bowlersID = 10;
+        
+        firstName = txtBowFirstName5.getText();
+        lastName = txtBowLastName5.getText();
+        runsConceded5 = Integer.parseInt(txtBowRunsConceded5.getText());
+        
+        
+        rbnBowler1.setEnabled(false);
+        rbnBowler2.setEnabled(false);
+        rbnBowler3.setEnabled(false);
+        rbnBowler4.setEnabled(false);
+    }//GEN-LAST:event_rbnBowler5ActionPerformed
+
+    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
+        // TODO add your handling code here:
+        startButton.setEnabled(false);
+        btnReady.setEnabled(true);
+        rbnBowler1.setEnabled(true);
+                rbnBowler2.setEnabled(true);
+                rbnBowler3.setEnabled(true);
+                rbnBowler4.setEnabled(true);
+                rbnBowler5.setEnabled(true);
+                rbnBat1.setEnabled(true);
+                rbnBat2.setEnabled(true);
+                rbnBat3.setEnabled(true);
+                rbnBat4.setEnabled(true);
+                rbnBat5.setEnabled(true);
+                rbnBat6.setEnabled(true);
+                rbnBat7.setEnabled(true);
+                rbnBat8.setEnabled(true);
+                rbnBat9.setEnabled(true);
+                rbnBat10.setEnabled(true);
+                rbnBat11.setEnabled(true);
+             JOptionPane.showMessageDialog(null, "Game has started! Please select a batsman and bowler!");
+             
+        String mID = txtMatchID.getText();
+           try
+        {
+            CloseableHttpClient client = HttpClients.createDefault();
+        HttpPost request = new HttpPost("http://localhost:8080/totalscore/add");
+        
+        Gson gson = new Gson();
+        TotalScore tScore = new TotalScore();
+        tScore.setMatchID(mID);
+        tScore.setTotalScore("0");
+        tScore.setTotalWickets("0");
+        tScore.setTotalOvers("0");
+        
+        String jsonInString = gson.toJson(tScore);
+        
+        StringEntity entity = new StringEntity(jsonInString);
+        request.setEntity(entity);
+        request.setHeader("Accept", "application/json");
+        request.setHeader("Content-type", "application/json");
+        
+        
+        CloseableHttpResponse response = client.execute(request);
+        client.close();
+        
+        
+        
+        if (response.getStatusLine().getStatusCode() == 204)
+        {
+            JOptionPane.showMessageDialog(null,"Please enter all fields");
+        }
+       
+        }
+        
+        catch(Exception e)
+        {
+            
+        }
+           
+       try
+        {
+            CloseableHttpClient client = HttpClients.createDefault();
+        HttpPost request = new HttpPost("http://localhost:8080/extras/add");
+        
+        Gson gson = new Gson();
+        Extras extras = new Extras();
+        extras.setMatchID(mID);
+        extras.setTotalWides("0");
+        extras.setTotalNoballs("0");
+        
+        String jsonInString = gson.toJson(extras);
+        
+        StringEntity entity = new StringEntity(jsonInString);
+        request.setEntity(entity);
+        request.setHeader("Accept", "application/json");
+        request.setHeader("Content-type", "application/json");
+        
+        
+        CloseableHttpResponse response = client.execute(request);
+        client.close();
+        
+        
+        
+        if (response.getStatusLine().getStatusCode() == 204)
+        {
+            JOptionPane.showMessageDialog(null,"Please enter all fields");
+        }
+       
+        }
+        
+        catch(Exception e)
+        {
+            
+        }
+    }//GEN-LAST:event_startButtonActionPerformed
+
+    private void txtUpdateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUpdateKeyTyped
+        // TODO add your handling code here:
+  
+    }//GEN-LAST:event_txtUpdateKeyTyped
+
+    private void btnReadyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadyActionPerformed
+        // TODO add your handling code here:
+         readyFunction();
+         
+    }//GEN-LAST:event_btnReadyActionPerformed
+
+    private void btnSecondInnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondInnActionPerformed
+        // TODO add your handling code here
+        this.dispose();
+        CricketScoreboardForm form2 = new CricketScoreboardForm();
+        form2.setVisible(true);
+        isFirstInnings = false;
+        
+    }//GEN-LAST:event_btnSecondInnActionPerformed
+
+    private void readyFunction() {
+        
+        
+    
+        if (rbnBat1.isSelected() || rbnBat2.isSelected() || rbnBat3.isSelected()
+                || rbnBat4.isSelected() || rbnBat5.isSelected() || rbnBat6.isSelected()
+                || rbnBat7.isSelected() || rbnBat8.isSelected() || rbnBat9.isSelected()
+                || rbnBat10.isSelected() || rbnBat11.isSelected() && rbnBowler1.isSelected()
+                      || rbnBowler2.isSelected() || rbnBowler3.isSelected()
+                || rbnBowler4.isSelected() || rbnBowler5.isSelected())
+          
+        {       
+            updateButton.setEnabled(true);
+            btnReady.setEnabled(false);
+        }   
+        
+        else 
+            JOptionPane.showMessageDialog(null, "Please select batsman and/or bowler!");
+              
+    }
     /**
      * @param args the command line arguments
      */
@@ -1926,8 +2607,16 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnAddBowler;
+    private javax.swing.JButton btnReady;
+    private javax.swing.JButton btnSecondInn;
     private javax.swing.JButton btnSet;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1959,6 +2648,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbnBowler3;
     private javax.swing.JRadioButton rbnBowler4;
     private javax.swing.JRadioButton rbnBowler5;
+    private javax.swing.JButton startButton;
     private javax.swing.JTextField txtAddFirstName;
     private javax.swing.JTextField txtAddLastName;
     private javax.swing.JLabel txtBallsFaced;
@@ -2034,6 +2724,12 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtBowWickets4;
     private javax.swing.JTextField txtBowWickets5;
     private javax.swing.JTextField txtMatchID;
+    private javax.swing.JTextField txtOverallScore1;
+    private javax.swing.JTextField txtRunstoWin;
+    private javax.swing.JTextField txtTotalNoballs1;
+    private javax.swing.JTextField txtTotalOvers1;
+    private javax.swing.JTextField txtTotalWickets1;
+    private javax.swing.JTextField txtTotalWides1;
     private javax.swing.JTextField txtUpdate;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
