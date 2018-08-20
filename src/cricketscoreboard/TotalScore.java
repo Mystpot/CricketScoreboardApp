@@ -35,8 +35,8 @@ public class TotalScore {
         return totalScoreID;
     }
     
-    public void setTotalScoreID(Integer id) {
-        id = 1;
+    public void setTotalScoreID(Integer id) 
+    {
         totalScoreID = id;
     }
 

@@ -10,13 +10,20 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
@@ -80,6 +87,30 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
     private int ballsFaced9 = 0;
     private int ballsFaced10 = 0;
     private int ballsFaced11 = 0;
+    
+    private int batsmanID1 = 0;
+    private int batsmanID2 = 0;
+    private int batsmanID3 = 0;
+    private int batsmanID4 = 0;
+    private int batsmanID5 = 0;
+    private int batsmanID6 = 0;
+    private int batsmanID7 = 0;
+    private int batsmanID8 = 0;
+    private int batsmanID9 = 0;
+    private int batsmanID10 = 0;
+    private int batsmanID11 = 0;
+    
+    private int bowlersID1 = 0;
+    private int bowlersID2 = 0;
+    private int bowlersID3 = 0;
+    private int bowlersID4 = 0;
+    private int bowlersID5 = 0;
+    
+    private int batsmanOrder = 1;
+    private int bowlerOrder = 1;
+    
+    private String username = "root";
+    private String password = "root";
     private String isOut;
     
     
@@ -1128,697 +1159,756 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
         
+        boolean isValid = false;
         String update = txtUpdate.getText();
-           
-        try
-        {
-          
-            String ballsFaced = "";
-            String totalScore = "";
-            String getTScore = "";
-            String isOut = "false";
        
-         switch(batsmanID)
-         {
-             case 1:  
-                  if (update.equals("out"))
-                  {
-                        rbnBat1.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced1 = ballsFaced1 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced1);
-                        txtBallsFaced1.setText(ballsFaced);
-                         getTScore = txtBat1TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore1 = totalScore1 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore1);
-                 txtBat1TotalScore.setText(totalScore);
-                 getTScore = txtBat1TotalScore.getText();
-                 
-                 ballsFaced1 = ballsFaced1 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced1);
-                 txtBallsFaced1.setText(ballsFaced);
-                 
-                 
-                 break;
-             
-             case 2: 
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat2.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced2 = ballsFaced2 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced2);
-                        txtBallsFaced2.setText(ballsFaced);
-                         getTScore = txtBat2TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore2 = totalScore2 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore2);
-                 txtBat2TotalScore.setText(totalScore);
-                 getTScore = txtBat2TotalScore.getText();
-                 
-                 ballsFaced2 = ballsFaced2 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced2);
-                 txtBallsFaced2.setText(ballsFaced);
-                 break;
-                 
-             case 3: 
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat3.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced3 = ballsFaced3 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced3);
-                        txtBallsFaced3.setText(ballsFaced);
-                         getTScore = txtBat3TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore3 = totalScore3 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore3);
-                 txtBat3TotalScore.setText(totalScore);
-                 getTScore = txtBat3TotalScore.getText();
-                 
-                 ballsFaced3 = ballsFaced3 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced3);
-                 txtBallsFaced3.setText(ballsFaced);
-                 break;
-            
-             case 4:
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat4.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced4 = ballsFaced4 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced4);
-                        txtBallsFaced4.setText(ballsFaced);
-                         getTScore = txtBat4TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore4 = totalScore4 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore4);
-                 txtBat4TotalScore.setText(totalScore);
-                 getTScore = txtBat4TotalScore.getText();
-                 
-                 ballsFaced4 = ballsFaced4 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced4);
-                 txtBallsFaced4.setText(ballsFaced);
-                 break;
-                 
-             case 5:
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat5.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced5 = ballsFaced5 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced5);
-                        txtBallsFaced5.setText(ballsFaced);
-                         getTScore = txtBat5TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore5 = totalScore5 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore5);
-                 txtBat5TotalScore.setText(totalScore);
-                 getTScore = txtBat5TotalScore.getText();
-                 
-                 ballsFaced5 = ballsFaced5 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced5);
-                 txtBallsFaced5.setText(ballsFaced);
-                 break;
-                 
-             case 6:
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat6.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced6 = ballsFaced6 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced6);
-                        txtBallsFaced6.setText(ballsFaced);
-                         getTScore = txtBat6TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore6 = totalScore6 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore6);
-                 txtBat6TotalScore.setText(totalScore);
-                 getTScore = txtBat6TotalScore.getText();
-                 
-                 ballsFaced6 = ballsFaced6 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced6);
-                 txtBallsFaced6.setText(ballsFaced);
-                 break;
-                 
-             case 7:
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat7.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced7 = ballsFaced7 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced7);
-                        txtBallsFaced7.setText(ballsFaced);
-                         getTScore = txtBat7TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore7 = totalScore7 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore7);
-                 txtBat7TotalScore.setText(totalScore);
-                 getTScore = txtBat7TotalScore.getText();
-                 
-                 ballsFaced7 = ballsFaced7 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced7);
-                 txtBallsFaced7.setText(ballsFaced);
-                 break;
-                 
-             case 8: 
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat8.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced8 = ballsFaced8 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced8);
-                        txtBallsFaced8.setText(ballsFaced);
-                         getTScore = txtBat8TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore8 = totalScore8 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore8);
-                 txtBat8TotalScore.setText(totalScore);
-                 getTScore = txtBat8TotalScore.getText();
-                 
-                 ballsFaced8 = ballsFaced8 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced8);
-                 txtBallsFaced8.setText(ballsFaced);
-                 break;
-                 
-             case 9:
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat9.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced9 = ballsFaced9 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced9);
-                        txtBallsFaced9.setText(ballsFaced);
-                         getTScore = txtBat9TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore9 = totalScore9 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore9);
-                 txtBat9TotalScore.setText(totalScore);
-                 getTScore = txtBat9TotalScore.getText();
-                 
-                 ballsFaced9 = ballsFaced9 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced9);
-                 txtBallsFaced9.setText(ballsFaced);
-                 break;
-                 
-             case 10:
-                 
-                 if (update.equals("out"))
-                  {
-                        rbnBat10.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced10 = ballsFaced10 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced10);
-                        txtBallsFaced10.setText(ballsFaced);
-                         getTScore = txtBat10TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                 
-                 totalScore10 = totalScore10 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore10);
-                 txtBat10TotalScore.setText(totalScore);
-                 getTScore = txtBat10TotalScore.getText();
-                 
-                 ballsFaced10 = ballsFaced10 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced10);
-                 txtBallsFaced10.setText(ballsFaced);
-                 break;
-                 
-            case 11:
-                
-                if (update.equals("out"))
-                  {
-                        rbnBat11.setVisible(false);
-                        updateButton.setEnabled(false);
-                        ballsFaced11 = ballsFaced11 + 1; 
-                        ballsFaced = Integer.toString(ballsFaced11);
-                        txtBallsFaced11.setText(ballsFaced);
-                        getTScore = txtBat11TotalScore.getText();
-                        isOut = "true";
-                        readyFunction();
-                        break;
-                  }
-                
-                 totalScore11 = totalScore11 + Integer.parseInt(update);
-                 totalScore = Integer.toString(totalScore11);
-                 txtBat11TotalScore.setText(totalScore);
-                 getTScore = txtBat11TotalScore.getText();
-                 
-                 ballsFaced11 = ballsFaced11 + 1; 
-                 ballsFaced = Integer.toString(ballsFaced11);
-                 txtBallsFaced11.setText(ballsFaced);
-                 break;
-         }
-            
-         CloseableHttpClient client = HttpClients.createDefault();
-         HttpPut request = new HttpPut("http://localhost:8080/batsman/update") ;
-         
-         String matchID = txtMatchID.getText();
-         
-        Gson gson = new Gson();
-        Batsman batsman = new Batsman();
-       
-        batsman.setBatsmanID(batsmanID);
-        batsman.setMatchID(matchID);
-        batsman.setFirstName(firstName);
-        batsman.setLastName(lastName);
-        batsman.setTotalScore(getTScore);
-        batsman.setBowledBy("n/a");
-        batsman.setBallsFaced(ballsFaced);
-        batsman.setIsOut(isOut);
-        
-        
-        String jsonInString = gson.toJson(batsman);
-        
-         StringEntity entity = new StringEntity(jsonInString);
-        request.setEntity(entity);
-        request.setHeader("Accept", "application/json");
-        request.setHeader("Content-type", "application/json");
-        
-        
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
-        
-    
-        }
-        catch(Exception e)
+        if (!update.matches("[0-9]+"))
         {
-        }
-        
-        try 
-        {
-            
-            String runsConceded = ""; 
-            String wickets = "0";
-            String getRC = "";
-            String getOB = "";
-            
-            if (!update.equals("nb") || !update.equals("w"))
-                ballCounter++;
-            
-                if (ballCounter == 6)
-                {
-                    ballCounter = 0;
-                
-                switch(bowlersID) {
-            
-                    case 1:
-                        
-                    overs1 = Integer.parseInt(txtBowOversBowled1.getText());
-                    overs1 = overs1 + 1;
-                    String overs1str = Integer.toString(overs1);
-                    txtBowOversBowled1.setText(overs1str);
-                    getOB = txtBowOversBowled1.getText();
-                    rbnBowler1.setSelected(false);
-                    rbnBowler2.setEnabled(true);
-                    rbnBowler3.setEnabled(true);
-                    rbnBowler4.setEnabled(true);
-                    rbnBowler5.setEnabled(true);
-                    break;
-                    
-                    case 2:
-                        
-                    overs2 = Integer.parseInt(txtBowOversBowled2.getText());
-                    overs2 = overs2 + 1;
-                    String overs2str = Integer.toString(overs2);
-                    txtBowOversBowled2.setText(overs2str);
-                    getOB = txtBowOversBowled2.getText();
-                    rbnBowler1.setEnabled(true);
-                    rbnBowler2.setSelected(false);
-                    rbnBowler3.setEnabled(true);
-                    rbnBowler4.setEnabled(true);
-                    rbnBowler5.setEnabled(true);
-                    break;
-                    
-                    case 3:
-                        
-                    overs3 = Integer.parseInt(txtBowOversBowled3.getText());
-                    overs3 = overs3 + 1;
-                    String overs3str = Integer.toString(overs3);
-                    txtBowOversBowled3.setText(overs3str);
-                    getOB = txtBowOversBowled3.getText();
-                    rbnBowler1.setEnabled(true);
-                    rbnBowler2.setEnabled(true);
-                    rbnBowler3.setSelected(false);
-                    rbnBowler4.setEnabled(true);
-                    rbnBowler5.setEnabled(true);
-                    break;
-                    
-                    case 4:
-                        
-                    overs4 = Integer.parseInt(txtBowOversBowled4.getText());
-                    overs4 = overs4 + 1;
-                    String overs4str = Integer.toString(overs4);
-                    txtBowOversBowled4.setText(overs4str);
-                    getOB = txtBowOversBowled4.getText();
-                    rbnBowler1.setEnabled(true);
-                    rbnBowler2.setEnabled(true);
-                    rbnBowler3.setEnabled(true);
-                    rbnBowler4.setSelected(false);
-                    rbnBowler5.setEnabled(true);
-                    break;
-                    
-                    case 5:
-                        
-                    overs5 = Integer.parseInt(txtBowOversBowled5.getText());
-                    overs5 = overs5 + 1;
-                    String overs5str = Integer.toString(overs5);
-                    txtBowOversBowled5.setText(overs5str);
-                    getOB = txtBowOversBowled5.getText();
-                    rbnBowler1.setEnabled(true);
-                    rbnBowler2.setEnabled(true);
-                    rbnBowler3.setEnabled(true);
-                    rbnBowler4.setEnabled(true);
-                    rbnBowler5.setSelected(false);
-                    break;
-                     }
-                }
-                
-            switch(bowlersID)
+            if(update.equals("nb") || update.equals("w") || update.equals("out"))
             {
-                case 1: 
-                    
-                    if (update.equals("out"))
-                    {
-                        wickets1 = wickets1 + 1; 
-                        wickets = Integer.toString(wickets1);
-                        txtBowWickets1.setText(wickets);
-                        break;
-                  } 
-                    
-                   
-                    
-                    runsConceded1 = runsConceded1 + Integer.parseInt(update);
-                    runsConceded = Integer.toString(runsConceded1);
-                    txtBowRunsConceded1.setText(runsConceded);
-                    getRC = txtBowRunsConceded1.getText();
-                    break;
-                    
-                    case 2: 
-                    
-                    if (update.equals("out"))
-                    {
-                        wickets2 = wickets2 + 1; 
-                        wickets = Integer.toString(wickets2);
-                        txtBowWickets2.setText(wickets);
-                        break;
-                  } 
-                    
-                   
-                    
-                    runsConceded2 = runsConceded2 + Integer.parseInt(update);
-                    runsConceded = Integer.toString(runsConceded2);
-                    txtBowRunsConceded2.setText(runsConceded);
-                    getRC = txtBowRunsConceded2.getText();
-                    break;
-                    
-                    case 3: 
-                    
-                    if (update.equals("out"))
-                    {
-                        wickets3 = wickets3 + 1; 
-                        wickets = Integer.toString(wickets3);
-                        txtBowWickets3.setText(wickets);
-                        break;
-                  } 
-                    
-                   
-                    
-                    runsConceded3 = runsConceded3 + Integer.parseInt(update);
-                    runsConceded = Integer.toString(runsConceded3);
-                    txtBowRunsConceded3.setText(runsConceded);
-                    getRC = txtBowRunsConceded3.getText();
-                    break;
-                    
-                    case 4: 
-                    
-                    if (update.equals("out"))
-                    {
-                        wickets4 = wickets4 + 1; 
-                        wickets = Integer.toString(wickets4);
-                        txtBowWickets4.setText(wickets);
-                        break;
-                  } 
-                    
-                   
-                    
-                    runsConceded4 = runsConceded4 + Integer.parseInt(update);
-                    runsConceded = Integer.toString(runsConceded4);
-                    txtBowRunsConceded4.setText(runsConceded);
-                    getRC = txtBowRunsConceded4.getText();
-                    break;
-                    
-                    case 5: 
-                    
-                    if (update.equals("out"))
-                    {
-                        wickets5 = wickets5 + 1; 
-                        wickets = Integer.toString(wickets5);
-                        txtBowWickets5.setText(wickets);
-                        break;
-                  } 
-                    
-                   
-                    
-                    runsConceded5 = runsConceded5 + Integer.parseInt(update);
-                    runsConceded = Integer.toString(runsConceded5);
-                    txtBowRunsConceded5.setText(runsConceded);
-                    getRC = txtBowRunsConceded5.getText();
-                    break;
+                isValid = true;
             }
-            
-         CloseableHttpClient client = HttpClients.createDefault();
-         HttpPut request = new HttpPut("http://localhost:8080/bowler/update") ;
-         
-         String matchID = txtMatchID.getText();
-         
-        Gson gson = new Gson();
-        Bowler bowler = new Bowler();
-       
-        bowler.setBowlersID(bowlersID);
-        bowler.setMatchID(matchID);
-        bowler.setFirstName(firstName);
-        bowler.setLastName(lastName);
-        bowler.setTotalWickets(wickets);
-        bowler.setRunsConceded(getRC);
-        bowler.setOversBowled(getOB);
+        } else 
+            isValid = true;
         
         
-        String jsonInString = gson.toJson(bowler);
+ 
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        UsernamePasswordCredentials credentials
+         = new UsernamePasswordCredentials("root", "root");
+        provider.setCredentials(AuthScope.ANY, credentials);
         
-         StringEntity entity = new StringEntity(jsonInString);
-        request.setEntity(entity);
-        request.setHeader("Accept", "application/json");
-        request.setHeader("Content-type", "application/json");
-      
-        
-        CloseableHttpResponse response = client.execute(request);
-        client.close();        
-       }
-        
-        catch(Exception e)
+        if(readyFunction())
         {
-            
-        }
-        
-        try {
-            
-        String tScore = "";
-        String getTScore = "";
-        String totWickets = "";
-        String getTwickets = "";
-        String getTotOv = "";
-        
-        if (!update.equals("nb") || !update.equals("w"))
-                tBallCounter++;
-            
-                if (tBallCounter == 6)
-                {
-                    tBallCounter = 0;
-                    
-                    tOvers = Integer.parseInt(txtTotalOvers1.getText());
-                    tOvers = tOvers + 1;
-                    String tOversStr = Integer.toString(tOvers);
-                    txtTotalOvers1.setText(tOversStr);
-                    getTotOv = txtTotalOvers1.getText();
-                    JOptionPane.showMessageDialog(null, "Over is up! Next bowler");
-                }
-                
-         if (update.equals("out"))
-        {
-            tWickets = tWickets + 1;
-            totWickets = Integer.toString(tWickets);
-            txtTotalWickets1.setText(totWickets);
-            getTwickets = txtTotalWickets1.getText();
-            JOptionPane.showMessageDialog(null, "Batman is out! Bring in the next batsman");
-        }
-            
-         if (getTotOv.equals("50"))
-         {
-                JOptionPane.showMessageDialog(null, "Innings is over! Please bring in the next team");
-                updateButton.setEnabled(false);
-                btnSecondInn.setEnabled(true);
-                
-         }
-         if (totWickets.equals("10"))
-         {
-                JOptionPane.showMessageDialog(null, "Innings is over! Please bring in the next team");
-                updateButton.setEnabled(false);
-                btnSecondInn.setEnabled(true);
-         }
-         
-        totalScore = totalScore + Integer.parseInt(update);
-        tScore = Integer.toString(totalScore);
-        txtOverallScore1.setText(tScore);
-        getTScore = txtOverallScore1.getText();
-        
-        
-            
-            
-         CloseableHttpClient client = HttpClients.createDefault();
-         HttpPut request = new HttpPut("http://localhost:8080/totalscore/update") ;
-         
-         String matchID = txtMatchID.getText();
-         
-        Gson gson = new Gson();
-        TotalScore totsScore = new TotalScore();
-        
-       
-        totsScore.setTotalScoreID(totalScoreID);
-        totsScore.setMatchID(matchID);
-        totsScore.setTotalScore(getTScore);
-        totsScore.setTotalWickets(getTwickets);
-        totsScore.setTotalOvers(getTotOv);
-  
-        String jsonInString = gson.toJson(totsScore);
-        
-         StringEntity entity = new StringEntity(jsonInString);
-        request.setEntity(entity);
-        request.setHeader("Accept", "application/json");
-        request.setHeader("Content-type", "application/json");
-        
-        
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
-            
-        }
-        
-        catch (Exception e)
-        {
-            
-        }
-        
-        try {
-            
-            String totWides = "";
-            String totNB = "";
-            
-            
-            if (update.equals("w"))
+            if(isValid)
             {
-                tWides = tWides + 1;
-            totWides = Integer.toString(tWides);
-            txtTotalWides1.setText(totWides);
+            try
+            {
+
+                String ballsFaced = "";
+                String totalScore = "";
+                String getTScore = "";
+                String isOut = "false";
+
+             switch(batsmanOrder)
+             {
+                 case 1:  
+                      if (update.equals("out"))
+                      {
+                            
+                            rbnBat1.setSelected(false);
+                            rbnBat1.setVisible(false);
+                            ballsFaced1 = ballsFaced1 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced1);
+                            txtBallsFaced1.setText(ballsFaced);
+                             getTScore = txtBat1TotalScore.getText();
+                            isOut = "true";
+                            break;
+                      }
+
+                     totalScore1 = totalScore1 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore1);
+                     txtBat1TotalScore.setText(totalScore);
+                     getTScore = txtBat1TotalScore.getText();
+
+                     ballsFaced1 = ballsFaced1 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced1);
+                     txtBallsFaced1.setText(ballsFaced);
+
+
+                     break;
+
+                 case 2: 
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat2.setSelected(false);
+                            rbnBat2.setVisible(false);
+                            ballsFaced2 = ballsFaced2 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced2);
+                            txtBallsFaced2.setText(ballsFaced);
+                             getTScore = txtBat2TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore2 = totalScore2 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore2);
+                     txtBat2TotalScore.setText(totalScore);
+                     getTScore = txtBat2TotalScore.getText();
+
+                     ballsFaced2 = ballsFaced2 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced2);
+                     txtBallsFaced2.setText(ballsFaced);
+                     break;
+
+                 case 3: 
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat3.setSelected(false);
+                            rbnBat3.setVisible(false);
+                            ballsFaced3 = ballsFaced3 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced3);
+                            txtBallsFaced3.setText(ballsFaced);
+                             getTScore = txtBat3TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore3 = totalScore3 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore3);
+                     txtBat3TotalScore.setText(totalScore);
+                     getTScore = txtBat3TotalScore.getText();
+
+                     ballsFaced3 = ballsFaced3 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced3);
+                     txtBallsFaced3.setText(ballsFaced);
+                     break;
+
+                 case 4:
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat4.setSelected(false);
+                            rbnBat4.setVisible(false);
+                            ballsFaced4 = ballsFaced4 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced4);
+                            txtBallsFaced4.setText(ballsFaced);
+                             getTScore = txtBat4TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore4 = totalScore4 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore4);
+                     txtBat4TotalScore.setText(totalScore);
+                     getTScore = txtBat4TotalScore.getText();
+
+                     ballsFaced4 = ballsFaced4 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced4);
+                     txtBallsFaced4.setText(ballsFaced);
+                     break;
+
+                 case 5:
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat5.setSelected(false);
+                            rbnBat5.setVisible(false);
+                            ballsFaced5 = ballsFaced5 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced5);
+                            txtBallsFaced5.setText(ballsFaced);
+                             getTScore = txtBat5TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore5 = totalScore5 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore5);
+                     txtBat5TotalScore.setText(totalScore);
+                     getTScore = txtBat5TotalScore.getText();
+
+                     ballsFaced5 = ballsFaced5 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced5);
+                     txtBallsFaced5.setText(ballsFaced);
+                     break;
+
+                 case 6:
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat6.setSelected(false);
+                            rbnBat6.setVisible(false);
+                            ballsFaced6 = ballsFaced6 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced6);
+                            txtBallsFaced6.setText(ballsFaced);
+                             getTScore = txtBat6TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore6 = totalScore6 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore6);
+                     txtBat6TotalScore.setText(totalScore);
+                     getTScore = txtBat6TotalScore.getText();
+
+                     ballsFaced6 = ballsFaced6 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced6);
+                     txtBallsFaced6.setText(ballsFaced);
+                     break;
+
+                 case 7:
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat7.setSelected(false);
+                            rbnBat7.setVisible(false);
+                            ballsFaced7 = ballsFaced7 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced7);
+                            txtBallsFaced7.setText(ballsFaced);
+                             getTScore = txtBat7TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore7 = totalScore7 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore7);
+                     txtBat7TotalScore.setText(totalScore);
+                     getTScore = txtBat7TotalScore.getText();
+
+                     ballsFaced7 = ballsFaced7 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced7);
+                     txtBallsFaced7.setText(ballsFaced);
+                     break;
+
+                 case 8: 
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat8.setSelected(false);
+                            rbnBat8.setVisible(false);
+                            ballsFaced8 = ballsFaced8 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced8);
+                            txtBallsFaced8.setText(ballsFaced);
+                             getTScore = txtBat8TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore8 = totalScore8 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore8);
+                     txtBat8TotalScore.setText(totalScore);
+                     getTScore = txtBat8TotalScore.getText();
+
+                     ballsFaced8 = ballsFaced8 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced8);
+                     txtBallsFaced8.setText(ballsFaced);
+                     break;
+
+                 case 9:
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat9.setSelected(false);
+                            rbnBat9.setVisible(false);
+                            ballsFaced9 = ballsFaced9 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced9);
+                            txtBallsFaced9.setText(ballsFaced);
+                             getTScore = txtBat9TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore9 = totalScore9 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore9);
+                     txtBat9TotalScore.setText(totalScore);
+                     getTScore = txtBat9TotalScore.getText();
+
+                     ballsFaced9 = ballsFaced9 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced9);
+                     txtBallsFaced9.setText(ballsFaced);
+                     break;
+
+                 case 10:
+
+                     if (update.equals("out"))
+                      {
+                            rbnBat10.setSelected(false);
+                            rbnBat10.setVisible(false);
+                            ballsFaced10 = ballsFaced10 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced10);
+                            txtBallsFaced10.setText(ballsFaced);
+                             getTScore = txtBat10TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore10 = totalScore10 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore10);
+                     txtBat10TotalScore.setText(totalScore);
+                     getTScore = txtBat10TotalScore.getText();
+
+                     ballsFaced10 = ballsFaced10 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced10);
+                     txtBallsFaced10.setText(ballsFaced);
+                     break;
+
+                case 11:
+
+                    if (update.equals("out"))
+                      {
+                            rbnBat11.setSelected(false);
+                            rbnBat11.setVisible(false);
+                            ballsFaced11 = ballsFaced11 + 1; 
+                            ballsFaced = Integer.toString(ballsFaced11);
+                            txtBallsFaced11.setText(ballsFaced);
+                            getTScore = txtBat11TotalScore.getText();
+                            isOut = "true";
+                            
+                            break;
+                      }
+
+                     totalScore11 = totalScore11 + Integer.parseInt(update);
+                     totalScore = Integer.toString(totalScore11);
+                     txtBat11TotalScore.setText(totalScore);
+                     getTScore = txtBat11TotalScore.getText();
+
+                     ballsFaced11 = ballsFaced11 + 1; 
+                     ballsFaced = Integer.toString(ballsFaced11);
+                     txtBallsFaced11.setText(ballsFaced);
+                     break;
+             }
+
+              HttpClient client = HttpClientBuilder.create()
+                    .setDefaultCredentialsProvider(provider)
+                    .build();
+
+             HttpPut request = new HttpPut("http://localhost:8080/batsman/update") ;
+
+             String matchID = txtMatchID.getText();
+             
+             
+            Gson gson = new Gson();
+            Batsman batsman = new Batsman();
+
+            batsman.setBatsmanID(batsmanID);
+            batsman.setMatchID(matchID);
+            batsman.setFirstName(firstName);
+            batsman.setLastName(lastName);
+            batsman.setTotalScore(getTScore);
+            batsman.setBowledBy("n/a");
+            batsman.setBallsFaced(ballsFaced);
+            batsman.setIsOut(isOut);
+
+            String jsonInString = gson.toJson(batsman);
+
+             StringEntity entity = new StringEntity(jsonInString);
+            request.setEntity(entity);
+            request.setHeader("Accept", "application/json");
+            request.setHeader("Content-type", "application/json");
+
+            HttpResponse response = client.execute(request);
+
+            }
+            catch(Exception e)
+            {
+            }
+
+            try 
+            {
+
+                String runsConceded = ""; 
+                String wickets = "0";
+                String getRC = "";
+                String getOB = "";
+
+                if (!update.equals("nb") && !update.equals("w"))
+                    ballCounter++;
+
+                    if (ballCounter == 6)
+                    {
+                        ballCounter = 0;
+
+                    switch(bowlerOrder) {
+
+                        case 1:
+
+                        overs1 = Integer.parseInt(txtBowOversBowled1.getText());
+                        overs1 = overs1 + 1;
+                        String overs1str = Integer.toString(overs1);
+                        txtBowOversBowled1.setText(overs1str);
+                        getOB = txtBowOversBowled1.getText();
+                        rbnBowler1.setSelected(false);
+                        rbnBowler2.setEnabled(true);
+                        rbnBowler3.setEnabled(true);
+                        rbnBowler4.setEnabled(true);
+                        rbnBowler5.setEnabled(true);
+                        break;
+
+                        case 2:
+
+                        overs2 = Integer.parseInt(txtBowOversBowled2.getText());
+                        overs2 = overs2 + 1;
+                        String overs2str = Integer.toString(overs2);
+                        txtBowOversBowled2.setText(overs2str);
+                        getOB = txtBowOversBowled2.getText();
+                        rbnBowler1.setEnabled(true);
+                        rbnBowler2.setSelected(false);
+                        rbnBowler3.setEnabled(true);
+                        rbnBowler4.setEnabled(true);
+                        rbnBowler5.setEnabled(true);
+                        break;
+
+                        case 3:
+
+                        overs3 = Integer.parseInt(txtBowOversBowled3.getText());
+                        overs3 = overs3 + 1;
+                        String overs3str = Integer.toString(overs3);
+                        txtBowOversBowled3.setText(overs3str);
+                        getOB = txtBowOversBowled3.getText();
+                        rbnBowler1.setEnabled(true);
+                        rbnBowler2.setEnabled(true);
+                        rbnBowler3.setSelected(false);
+                        rbnBowler4.setEnabled(true);
+                        rbnBowler5.setEnabled(true);
+                        break;
+
+                        case 4:
+
+                        overs4 = Integer.parseInt(txtBowOversBowled4.getText());
+                        overs4 = overs4 + 1;
+                        String overs4str = Integer.toString(overs4);
+                        txtBowOversBowled4.setText(overs4str);
+                        getOB = txtBowOversBowled4.getText();
+                        rbnBowler1.setEnabled(true);
+                        rbnBowler2.setEnabled(true);
+                        rbnBowler3.setEnabled(true);
+                        rbnBowler4.setSelected(false);
+                        rbnBowler5.setEnabled(true);
+                        break;
+
+                        case 5:
+
+                        overs5 = Integer.parseInt(txtBowOversBowled5.getText());
+                        overs5 = overs5 + 1;
+                        String overs5str = Integer.toString(overs5);
+                        txtBowOversBowled5.setText(overs5str);
+                        getOB = txtBowOversBowled5.getText();
+                        rbnBowler1.setEnabled(true);
+                        rbnBowler2.setEnabled(true);
+                        rbnBowler3.setEnabled(true);
+                        rbnBowler4.setEnabled(true);
+                        rbnBowler5.setSelected(false);
+                        break;
+                         }
+                    }
+
+                switch(bowlerOrder)
+                {
+                    case 1: 
+
+                        if (update.equals("out"))
+                        {
+                            wickets1 = wickets1 + 1; 
+                            wickets = Integer.toString(wickets1);
+                            txtBowWickets1.setText(wickets);
+                            break;
+                      } 
+
+
+
+                        runsConceded1 = runsConceded1 + Integer.parseInt(update);
+                        runsConceded = Integer.toString(runsConceded1);
+                        txtBowRunsConceded1.setText(runsConceded);
+                        getRC = txtBowRunsConceded1.getText();
+                        break;
+
+                        case 2: 
+
+                        if (update.equals("out"))
+                        {
+                            wickets2 = wickets2 + 1; 
+                            wickets = Integer.toString(wickets2);
+                            txtBowWickets2.setText(wickets);
+                            break;
+                      } 
+
+
+
+                        runsConceded2 = runsConceded2 + Integer.parseInt(update);
+                        runsConceded = Integer.toString(runsConceded2);
+                        txtBowRunsConceded2.setText(runsConceded);
+                        getRC = txtBowRunsConceded2.getText();
+                        break;
+
+                        case 3: 
+
+                        if (update.equals("out"))
+                        {
+                            wickets3 = wickets3 + 1; 
+                            wickets = Integer.toString(wickets3);
+                            txtBowWickets3.setText(wickets);
+                            break;
+                      } 
+
+
+
+                        runsConceded3 = runsConceded3 + Integer.parseInt(update);
+                        runsConceded = Integer.toString(runsConceded3);
+                        txtBowRunsConceded3.setText(runsConceded);
+                        getRC = txtBowRunsConceded3.getText();
+                        break;
+
+                        case 4: 
+
+                        if (update.equals("out"))
+                        {
+                            wickets4 = wickets4 + 1; 
+                            wickets = Integer.toString(wickets4);
+                            txtBowWickets4.setText(wickets);
+                            break;
+                      } 
+
+
+
+                        runsConceded4 = runsConceded4 + Integer.parseInt(update);
+                        runsConceded = Integer.toString(runsConceded4);
+                        txtBowRunsConceded4.setText(runsConceded);
+                        getRC = txtBowRunsConceded4.getText();
+                        break;
+
+                        case 5: 
+
+                        if (update.equals("out"))
+                        {
+                            wickets5 = wickets5 + 1; 
+                            wickets = Integer.toString(wickets5);
+                            txtBowWickets5.setText(wickets);
+                            break;
+                      } 
+
+
+
+                        runsConceded5 = runsConceded5 + Integer.parseInt(update);
+                        runsConceded = Integer.toString(runsConceded5);
+                        txtBowRunsConceded5.setText(runsConceded);
+                        getRC = txtBowRunsConceded5.getText();
+                        break;
+                }
+
+              HttpClient client = HttpClientBuilder.create()
+                    .setDefaultCredentialsProvider(provider)
+                    .build();
+             HttpPut request = new HttpPut("http://localhost:8080/bowler/update") ;
+
+             String matchID = txtMatchID.getText();
+
+            Gson gson = new Gson();
+            Bowler bowler = new Bowler();
+
+            bowler.setBowlersID(bowlersID);
+            bowler.setMatchID(matchID);
+            bowler.setFirstName(firstName);
+            bowler.setLastName(lastName);
+            bowler.setTotalWickets(wickets);
+            bowler.setRunsConceded(getRC);
+            bowler.setOversBowled(getOB);
+
+
+            String jsonInString = gson.toJson(bowler);
+
+             StringEntity entity = new StringEntity(jsonInString);
+            request.setEntity(entity);
+            request.setHeader("Accept", "application/json");
+            request.setHeader("Content-type", "application/json");
+
+
+            HttpResponse response = client.execute(request);       
+           }
+
+            catch(Exception e)
+            {
+
+            }
+
+            try {
+
+            String tScore = "";
+            String getTScore = "";
+            String totWickets = "";
+            String getTwickets = "0";
+            String getTotOv = "0";
+
+            if (!update.equals("nb") && !update.equals("w"))
+            {
+                    tBallCounter++;
+            }
+
+            if (tBallCounter == 6)
+            {
+                tBallCounter = 0;
+                  
+                tOvers = Integer.parseInt(txtTotalOvers1.getText());
+                tOvers = tOvers + 1;
+                String tOversStr = Integer.toString(tOvers);
+                txtTotalOvers1.setText(tOversStr);
+                getTotOv = txtTotalOvers1.getText();
+                JOptionPane.showMessageDialog(null, "Over is up! Next bowler");
+            }
+
+             if (update.equals("out"))
+            {
+                
+                tWickets = tWickets + 1;
+                totWickets = Integer.toString(tWickets);
+                txtTotalWickets1.setText(totWickets);
+                getTwickets = txtTotalWickets1.getText();
+                System.out.println(getTwickets);
+                JOptionPane.showMessageDialog(null, "Batman is out! Bring in the next batsman");
+            }
+             
+            System.out.println(getTwickets);
+
+             if (getTotOv.equals("50"))
+             {
+                    JOptionPane.showMessageDialog(null, "Innings is over! Please bring in the next team");
+                    updateButton.setEnabled(false);
+                    btnSecondInn.setEnabled(true);
+
+             }
+             
+             System.out.println(getTwickets);
+             if (totWickets.equals("10"))
+             {
+                    JOptionPane.showMessageDialog(null, "Innings is over! Please bring in the next team");
+                    updateButton.setEnabled(false);
+                    btnSecondInn.setEnabled(true);
+             }
+             System.out.println(getTwickets);
+             System.out.println(update);
+             if (!update.matches("[0-9]+"))
+             {
+                 if(update.equals("w") || update.equals("nb"))
+                 {
+                     update = "1";
+                 }
+                 else
+                 {
+                 update = "0";
+                 }
+             }
+            totalScore = totalScore + Integer.parseInt(update);
+            System.out.println("first");
+            tScore = Integer.toString(totalScore);
+            System.out.println("second");
+            txtOverallScore1.setText(tScore);
+            System.out.println("third");
+            getTScore = txtOverallScore1.getText();
+             
+             System.out.println("fourth");
+            System.out.println(getTwickets);
+
+                
+
+
+              HttpClient client = HttpClientBuilder.create()
+                    .setDefaultCredentialsProvider(provider)
+                    .build();
+              
+              System.out.println("testhere" + getTwickets);
+             HttpPut request = new HttpPut("http://localhost:8080/totalscore/update") ;
+             System.out.println("testagain" + getTwickets);
+             String matchID = txtMatchID.getText();
+
+            Gson gson = new Gson();
+            TotalScore totsScore = new TotalScore();
+             System.out.println("testhereagain" + getTwickets);
+            System.out.println("ID when updating:" + totalScoreID);
+            totsScore.setTotalScoreID(totalScoreID);
+            System.out.println("MatchID when updating:" + matchID);
+            totsScore.setMatchID(matchID);
+            System.out.println("TotalScore when updating:" + getTScore);
+            totsScore.setTotalScore(getTScore);
+            System.out.println("Wickets when updating:" + getTwickets);
+            totsScore.setTotalWickets(getTwickets);
+            System.out.println("Overs when updating:" + getTotOv);
+            totsScore.setTotalOvers(getTotOv);
+
+            String jsonInString = gson.toJson(totsScore);
+
+             StringEntity entity = new StringEntity(jsonInString);
+            request.setEntity(entity);
+            request.setHeader("Accept", "application/json");
+            request.setHeader("Content-type", "application/json");
+
+
+            HttpResponse response = client.execute(request);
+            System.out.println("Update response code" + response.getStatusLine().getStatusCode());
+
+            }
+
+            catch (Exception e)
+            {
+
+            }
+
+            try {
+
+                String totWides = "";
+                String totNB = "";
+
+
+                if (update.equals("w"))
+                {
+                    tWides = tWides + 1;
+                totWides = Integer.toString(tWides);
+                txtTotalWides1.setText(totWides);
+                txtOverallScore1.setText(Integer.toString(Integer.parseInt(txtOverallScore1.getText()) + 1));
+                    
+                }
+
+                if (update.equals("nb"))
+                {
+                    tNoballs = tNoballs + 1;
+                    totNB = Integer.toString(tNoballs);
+                    txtTotalNoballs1.setText(totNB);
+                    txtOverallScore1.setText(Integer.toString(Integer.parseInt(txtOverallScore1.getText()) + 1));
+
+                }
+
+             HttpClient client = HttpClientBuilder.create()
+                    .setDefaultCredentialsProvider(provider)
+                    .build();
+             HttpPut request = new HttpPut("http://localhost:8080/extras/update") ;
+
+             String matchID = txtMatchID.getText();
+
+            Gson gson = new Gson();
+            Extras extras = new Extras();
+
+
+            extras.setExtrasID(extrasID);
+            extras.setMatchID(matchID);
+            extras.setTotalWides(totWides);
+            extras.setTotalNoballs(totNB);
+
+            String jsonInString = gson.toJson(extras);
+
+             StringEntity entity = new StringEntity(jsonInString);
+            request.setEntity(entity);
+            request.setHeader("Accept", "application/json");
+            request.setHeader("Content-type", "application/json");
+
+
+            HttpResponse response = client.execute(request);
+            
  
             }
-            
-            if (update.equals("nb"))
+
+            catch (Exception e)
             {
-                tNoballs = tNoballs + 1;
-                totNB = Integer.toString(tNoballs);
-                txtTotalNoballs1.setText(totNB);
-                
+
             }
-            
-         CloseableHttpClient client = HttpClients.createDefault();
-         HttpPut request = new HttpPut("http://localhost:8080/extras/update") ;
-         
-         String matchID = txtMatchID.getText();
-         
-        Gson gson = new Gson();
-        Extras extras = new Extras();
-        
-       
-        extras.setExtrasID(extrasID);
-        extras.setMatchID(matchID);
-        extras.setTotalWides(totWides);
-        extras.setTotalNoballs(totNB);
-  
-        String jsonInString = gson.toJson(extras);
-        
-         StringEntity entity = new StringEntity(jsonInString);
-        request.setEntity(entity);
-        request.setHeader("Accept", "application/json");
-        request.setHeader("Content-type", "application/json");
-        
-        
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
-            
         }
-        
-        catch (Exception e)
-        {
-            
         }
-        
+            
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void rbnBat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat1ActionPerformed
 
         // TODO add your handling code here:
-        if (isFirstInnings)
-            batsmanID = 1;
-        else 
-            batsmanID = 12;
-        
+        batsmanID = batsmanID1;
+        batsmanOrder = 1;
         firstName = txtBat1FirstName.getText();
         lastName = txtBat1LastName.getText();
         totalScore1 = Integer.parseInt(txtBat1TotalScore.getText());
@@ -1845,13 +1935,26 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         String mID = txtMatchID.getText();
         String fName = txtAddFirstName.getText();
         String lName = txtAddLastName.getText();
+        String tScore = "";
+        boolean auth = false;
+        
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials (username, password);
+        provider.setCredentials(AuthScope.ANY, credentials);
+        
+        Batsman batsman = null;
+        Batsman batsman2 = null;
+        
         try {
             
-         CloseableHttpClient client = HttpClients.createDefault();
+        HttpClient client = HttpClientBuilder.create()
+                .setDefaultCredentialsProvider(provider)
+                .build();
+        
         HttpPost request = new HttpPost("http://localhost:8080/batsman/add");
         
         Gson gson = new Gson();
-        Batsman batsman = new Batsman();
+        batsman = new Batsman();
         batsman.setMatchID(mID);
         batsman.setFirstName(fName);
         batsman.setLastName(lName);
@@ -1859,6 +1962,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         batsman.setTotalScore("0");
         batsman.setBallsFaced("0");
         batsman.setIsOut("false");
+  
         
         String jsonInString = gson.toJson(batsman);
         
@@ -1867,11 +1971,16 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         request.setHeader("Accept", "application/json");
         request.setHeader("Content-type", "application/json");
         
+        HttpResponse response = client.execute(request);
         
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
-        
-        
+        String batJson = EntityUtils.toString(response.getEntity());
+        Gson batGson = new Gson();// TODO add your handling code here:
+        batsman2 = batGson.fromJson(batJson, Batsman.class);
+   
+        if (response.getStatusLine().getStatusCode() == 401)
+        {
+            JOptionPane.showMessageDialog(null, "Not authorized");
+        }
         
         if (response.getStatusLine().getStatusCode() == 204)
         {
@@ -1880,27 +1989,40 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         
          if (response.getStatusLine().getStatusCode() == 200)
         {
-            JOptionPane.showMessageDialog(null,"Batsman was added!");
+            //JOptionPane.showMessageDialog(null,"Batsman was added!");
         }
-       
+         
+         if(response.getStatusLine().getStatusCode() != 401)
+         {
+             auth = true;
+         }
        
         }
         catch (Exception e)
         {
-            
+            e.getMessage().toString();
         }
         
         try {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpGet request = new HttpGet("http://localhost:8080/batsman/find/1"); 
-        CloseableHttpResponse response = client.execute(request);
+         HttpClient client = HttpClientBuilder.create()
+                 .setDefaultCredentialsProvider(provider)
+                .build();
+        HttpGet request = new HttpGet("http://localhost:8080/batsman/find/" + batsman2.getBatsmanID()); 
+        HttpResponse response = client.execute(request);
         
         String json = EntityUtils.toString(response.getEntity());
         Gson gson = new Gson();// TODO add your handling code here:
-        Batsman batsman = gson.fromJson(json, Batsman.class);
+        batsman = gson.fromJson(json, Batsman.class);
+        
         String firstName = batsman.getFirstName();
         String lastName = batsman.getLastName();
-        String tScore = batsman.getTotalScore();
+        tScore = batsman.getTotalScore();
+
+        
+        if (auth)
+        {
+            if(response.getStatusLine().getStatusCode() == 200)
+            {
         
         switch(i)
         {
@@ -1908,6 +2030,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat1FirstName.setText(fName);
                 txtBat1LastName.setText(lName);
                 txtBat1TotalScore.setText(tScore);
+                batsmanID1 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1915,6 +2038,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat2FirstName.setText(fName);
                 txtBat2LastName.setText(lName);
                 txtBat2TotalScore.setText(tScore);
+                batsmanID2 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1922,6 +2046,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat3FirstName.setText(fName);
                 txtBat3LastName.setText(lName);
                 txtBat3TotalScore.setText(tScore);
+                batsmanID3 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1929,6 +2054,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat4FirstName.setText(fName);
                 txtBat4LastName.setText(lName);
                 txtBat4TotalScore.setText(tScore);
+                batsmanID4 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1936,6 +2062,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat5FirstName.setText(fName);
                 txtBat5LastName.setText(lName);
                 txtBat5TotalScore.setText(tScore);
+                batsmanID5 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1943,6 +2070,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat6FirstName.setText(fName);
                 txtBat6LastName.setText(lName);
                 txtBat6TotalScore.setText(tScore);
+                batsmanID6 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1950,6 +2078,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat7FirstName.setText(fName);
                 txtBat7LastName.setText(lName);
                 txtBat7TotalScore.setText(tScore);
+                batsmanID7 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1957,6 +2086,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat8FirstName.setText(fName);
                 txtBat8LastName.setText(lName);
                 txtBat8TotalScore.setText(tScore);
+                batsmanID8 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1964,6 +2094,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat9FirstName.setText(fName);
                 txtBat9LastName.setText(lName);
                 txtBat9TotalScore.setText(tScore);
+                batsmanID9 = batsman2.getBatsmanID();
                 i++;
                 break;
                 
@@ -1971,6 +2102,7 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat10FirstName.setText(fName);
                 txtBat10LastName.setText(lName);
                 txtBat10TotalScore.setText(tScore);
+                batsmanID10 = batsman2.getBatsmanID();
                 i++;
                 break;
         
@@ -1979,17 +2111,27 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
                 txtBat11FirstName.setText(fName);
                 txtBat11LastName.setText(lName);
                 txtBat11TotalScore.setText(tScore);
-                i++;
+                batsmanID11 = batsman2.getBatsmanID();
+                i = 1;
                 btnAddBowler.setEnabled(true);
                 btnAdd.setEnabled(false);
                 break;
+                }
  
             }
+           
+            auth = false;
+            
+           //  txtAddFirstName.setText("");
+           //  txtAddLastName.setText("");
+             txtAddFirstName.requestFocus();
+        }
         }
         catch (Exception e)
         {
             e.getMessage();
         }
+      
         
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -2010,10 +2152,9 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat2ActionPerformed
         // TODO add your handling code here:
-         if (isFirstInnings)
-            batsmanID = 2;
-        else 
-            batsmanID = 13;
+
+        batsmanID = batsmanID2;
+        batsmanOrder = 2;
          
         firstName = txtBat2FirstName.getText();
         lastName = txtBat2LastName.getText();
@@ -2033,11 +2174,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat3ActionPerformed
         // TODO add your handling code here:
-        if (isFirstInnings)
-            batsmanID = 3;
-        else 
-            batsmanID = 14;
-        
+        batsmanID = batsmanID3;
+        batsmanOrder = 3;
         firstName = txtBat3FirstName.getText();
         lastName = txtBat3LastName.getText();
         totalScore3 = Integer.parseInt(txtBat3TotalScore.getText());
@@ -2056,11 +2194,9 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat4ActionPerformed
         // TODO add your handling code here:
-         if (isFirstInnings)
-            batsmanID = 4;
-        else 
-            batsmanID = 15;
-         
+        batsmanID = batsmanID4;
+        batsmanOrder = 4;
+        
         firstName = txtBat4FirstName.getText();
         lastName = txtBat4LastName.getText();
         totalScore4 = Integer.parseInt(txtBat4TotalScore.getText());
@@ -2079,11 +2215,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat5ActionPerformed
         // TODO add your handling code here:
-         if (isFirstInnings)
-            batsmanID = 5;
-        else 
-            batsmanID = 16;
-         
+         batsmanID = batsmanID5;
+         batsmanOrder = 5;
         firstName = txtBat5FirstName.getText();
         lastName = txtBat5LastName.getText();
         totalScore5 = Integer.parseInt(txtBat5TotalScore.getText());
@@ -2102,11 +2235,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat6ActionPerformed
         // TODO add your handling code here:
-         if (isFirstInnings)
-            batsmanID = 6;
-        else 
-            batsmanID = 17;
-         
+         batsmanID = batsmanID6;
+         batsmanOrder = 6;
         firstName = txtBat6FirstName.getText();
         lastName = txtBat6LastName.getText();
         totalScore6 = Integer.parseInt(txtBat6TotalScore.getText());
@@ -2125,11 +2255,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat7ActionPerformed
         // TODO add your handling code here:
-         if (isFirstInnings)
-            batsmanID = 7;
-        else 
-            batsmanID = 18;
-         
+        batsmanID = batsmanID7;
+         batsmanOrder = 7;
         firstName = txtBat7FirstName.getText();
         lastName = txtBat7LastName.getText();
         totalScore7 = Integer.parseInt(txtBat7TotalScore.getText());
@@ -2148,11 +2275,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat8ActionPerformed
         // TODO add your handling code here:
-          if (isFirstInnings)
-            batsmanID = 8;
-        else 
-            batsmanID = 19;
-          
+         batsmanID = batsmanID8;
+          batsmanOrder = 8;
         firstName = txtBat8FirstName.getText();
         lastName = txtBat8LastName.getText();
         totalScore8 = Integer.parseInt(txtBat8TotalScore.getText());
@@ -2171,11 +2295,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat9ActionPerformed
         // TODO add your handling code here:
-          if (isFirstInnings)
-            batsmanID = 9;
-        else 
-            batsmanID = 20;
-          
+         batsmanID = batsmanID9;
+          batsmanOrder = 9;
         firstName = txtBat9FirstName.getText();
         lastName = txtBat9LastName.getText();
         totalScore9 = Integer.parseInt(txtBat9TotalScore.getText());
@@ -2194,11 +2315,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat10ActionPerformed
         // TODO add your handling code here:
-         if (isFirstInnings)
-            batsmanID = 10;
-        else 
-            batsmanID = 21;
-         
+        batsmanID = batsmanID10;
+         batsmanOrder = 10;
         firstName = txtBat10FirstName.getText();
         lastName = txtBat10LastName.getText();
         totalScore10 = Integer.parseInt(txtBat10TotalScore.getText());
@@ -2217,11 +2335,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBat11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBat11ActionPerformed
         // TODO add your handling code here:
-        if (isFirstInnings)
-            batsmanID = 11;
-        else 
-            batsmanID = 22;
-        
+        batsmanID = batsmanID11;
+        batsmanOrder = 11;
         firstName = txtBat11FirstName.getText();
         lastName = txtBat11LastName.getText();
         totalScore11 = Integer.parseInt(txtBat11TotalScore.getText());
@@ -2251,9 +2366,17 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         String mID = txtMatchID.getText();
         String fName = txtBowAddFName.getText();
         String lName = txtBowAddLName.getText();
+        boolean auth = false;
+        Bowler mainBowler = null;
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials (username, password);
+        provider.setCredentials(AuthScope.ANY, credentials);
+        //Bowler bowler = null;
         try {
             
-         CloseableHttpClient client = HttpClients.createDefault();
+         HttpClient client = HttpClientBuilder.create()
+                .setDefaultCredentialsProvider(provider)
+                .build();
         HttpPost request = new HttpPost("http://localhost:8080/bowler/add");
         
         Gson gson = new Gson();
@@ -2273,9 +2396,17 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         request.setHeader("Content-type", "application/json");
         
         
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
+        HttpResponse response = client.execute(request);
         
+        String jsonBowl = EntityUtils.toString(response.getEntity());
+        Gson gsonBowl = new Gson();// TODO add your handling code here:
+        mainBowler = gsonBowl.fromJson(jsonBowl, Bowler.class);
+      
+        
+        if (response.getStatusLine().getStatusCode() == 401)
+        {
+            JOptionPane.showMessageDialog(null, "Not authorized");
+        }
         
         
         if (response.getStatusLine().getStatusCode() == 204)
@@ -2285,10 +2416,15 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         
          if (response.getStatusLine().getStatusCode() == 200)
         {
-            JOptionPane.showMessageDialog(null,"Bowler was added!");
+            //JOptionPane.showMessageDialog(null,"Bowler was added!");
         }
        
-       
+          if(response.getStatusLine().getStatusCode() != 401)
+         {
+             auth = true;
+         }
+         
+         
         }
         catch (Exception e)
         {
@@ -2296,51 +2432,63 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         }
         
         try {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpGet request = new HttpGet("http://localhost:8080/bowler/find/1"); 
-        CloseableHttpResponse response = client.execute(request);
+        HttpClient client = HttpClientBuilder.create()
+                .setDefaultCredentialsProvider(provider)
+                .build();
+        HttpGet request = new HttpGet("http://localhost:8080/bowler/find/" + mainBowler.getBowlersID()); 
+        HttpResponse response = client.execute(request);
         
         String json = EntityUtils.toString(response.getEntity());
         Gson gson = new Gson();// TODO add your handling code here:
         Bowler bowler = gson.fromJson(json, Bowler.class);
         String firstName = bowler.getFirstName();
         String lastName = bowler.getLastName();
-        
+        if (auth)
+   
+             if(response.getStatusLine().getStatusCode() == 200)
+            {
+         
         switch(j)
         {
             case 1:
+               
                 txtBowFirstName1.setText(fName);
                 txtBowLastName1.setText(lName);
+                bowlersID1 = mainBowler.getBowlersID();
                 j++;
                 break;
                 
             case 2:
                 txtBowFirstName2.setText(fName);
                 txtBowLastName2.setText(lName);
+                bowlersID2 = mainBowler.getBowlersID();
                 j++;
                 break;
                 
             case 3:
                 txtBowFirstName3.setText(fName);
                 txtBowLastName3.setText(lName);
+                bowlersID3 = mainBowler.getBowlersID();
                 j++;
                 break;
                 
             case 4:
                 txtBowFirstName4.setText(fName);
                 txtBowLastName4.setText(lName);
+                bowlersID4 = mainBowler.getBowlersID();
                 j++;
                 break;
                 
             case 5:
                 txtBowFirstName5.setText(fName);
                 txtBowLastName5.setText(lName);
-                j++;
+                bowlersID5 = mainBowler.getBowlersID();
+                j = 1;
                 startButton.setEnabled(true);
                 btnAddBowler.setEnabled(false);
                  break;
             }
-        
+            }
         
         
         }
@@ -2353,11 +2501,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBowler3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler3ActionPerformed
         // TODO add your handling code here:
-            if (isFirstInnings)
-            bowlersID = 3;
-        else 
-            bowlersID = 8;
-        
+         bowlersID = bowlersID3;
+        bowlerOrder = 3;
         firstName = txtBowFirstName3.getText();
         lastName = txtBowLastName3.getText();
         runsConceded3 = Integer.parseInt(txtBowRunsConceded3.getText());
@@ -2371,11 +2516,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBowler4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler4ActionPerformed
         // TODO add your handling code here:
-            if (isFirstInnings)
-            bowlersID = 4;
-        else 
-            bowlersID = 9;
-        
+        bowlersID = bowlersID4;
+        bowlerOrder = 4;
         firstName = txtBowFirstName4.getText();
         lastName = txtBowLastName4.getText();
         runsConceded4 = Integer.parseInt(txtBowRunsConceded4.getText());
@@ -2389,10 +2531,9 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBowler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler1ActionPerformed
         // TODO add your handling code here:
-           if (isFirstInnings)
-            bowlersID = 1;
-        else 
-            bowlersID = 6;
+          
+        bowlersID = bowlersID1;
+        bowlerOrder = 1;
         
         firstName = txtBowFirstName1.getText();
         lastName = txtBowLastName1.getText();
@@ -2411,11 +2552,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBowler2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler2ActionPerformed
         // TODO add your handling code here:
-            if (isFirstInnings)
-            bowlersID = 2;
-        else 
-            bowlersID = 7;
-        
+        bowlersID = bowlersID2;
+        bowlerOrder = 2;
         firstName = txtBowFirstName2.getText();
         lastName = txtBowLastName2.getText();
         runsConceded2 = Integer.parseInt(txtBowRunsConceded2.getText());
@@ -2429,11 +2567,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void rbnBowler5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnBowler5ActionPerformed
         // TODO add your handling code here:
-            if (isFirstInnings)
-            bowlersID = 5;
-        else 
-            bowlersID = 10;
-        
+       bowlersID = bowlersID5;
+        bowlerOrder = 5;
         firstName = txtBowFirstName5.getText();
         lastName = txtBowLastName5.getText();
         runsConceded5 = Integer.parseInt(txtBowRunsConceded5.getText());
@@ -2468,9 +2603,20 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "Game has started! Please select a batsman and bowler!");
              
         String mID = txtMatchID.getText();
+        
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials (username, password);
+        provider.setCredentials(AuthScope.ANY, credentials);
+        
+        TotalScore totalscore2 = null;
+        TotalScore totalscore = null;
+        
            try
         {
-            CloseableHttpClient client = HttpClients.createDefault();
+            HttpClient client = HttpClientBuilder.create()
+                .setDefaultCredentialsProvider(provider)
+                .build();
+            
         HttpPost request = new HttpPost("http://localhost:8080/totalscore/add");
         
         Gson gson = new Gson();
@@ -2488,9 +2634,11 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         request.setHeader("Content-type", "application/json");
         
         
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
+        HttpResponse response = client.execute(request);
         
+        String batScore = EntityUtils.toString(response.getEntity());
+        Gson tscoreGson = new Gson();// TODO add your handling code here:
+        totalscore2 = tscoreGson.fromJson(batScore, TotalScore.class);
         
         
         if (response.getStatusLine().getStatusCode() == 204)
@@ -2498,6 +2646,8 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please enter all fields");
         }
        
+        
+        
         }
         
         catch(Exception e)
@@ -2506,8 +2656,30 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         }
            
        try
+       {
+           HttpClient client = HttpClientBuilder.create()
+                 .setDefaultCredentialsProvider(provider)
+                .build();
+        HttpGet request = new HttpGet("http://localhost:8080/totalscore/find/" + totalscore2.getTotalScoreID()); 
+        HttpResponse response = client.execute(request);
+        
+        String json = EntityUtils.toString(response.getEntity());
+        Gson gson = new Gson();// TODO add your handling code here:
+        totalscore = gson.fromJson(json, TotalScore.class);
+        totalScoreID = totalscore.getTotalScoreID();
+           
+       }
+       catch (Exception e)
+       {
+           
+       }
+           
+       try
         {
-            CloseableHttpClient client = HttpClients.createDefault();
+             HttpClient client = HttpClientBuilder.create()
+                .setDefaultCredentialsProvider(provider)
+                .build();
+             
         HttpPost request = new HttpPost("http://localhost:8080/extras/add");
         
         Gson gson = new Gson();
@@ -2524,9 +2696,12 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
         request.setHeader("Content-type", "application/json");
         
         
-        CloseableHttpResponse response = client.execute(request);
-        client.close();
+        HttpResponse response = client.execute(request);
         
+         if (response.getStatusLine().getStatusCode() == 401)
+        {
+            JOptionPane.showMessageDialog(null, "Not authorized");
+        }
         
         
         if (response.getStatusLine().getStatusCode() == 204)
@@ -2555,33 +2730,300 @@ public class CricketScoreboardForm extends javax.swing.JFrame {
 
     private void btnSecondInnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondInnActionPerformed
         // TODO add your handling code here
-        this.dispose();
-        CricketScoreboardForm form2 = new CricketScoreboardForm();
-        form2.setVisible(true);
-        isFirstInnings = false;
+       
+    tWides = 0;
+    tNoballs = 0;
+    ballCounter = 0;
+    tBallCounter = 0;
+    i = 1;
+    j = 1;
+    totalScore = 0;
+    tWickets = 0;
+    totalScore1 = 0;
+    totalScore2 = 0;
+    totalScore3 = 0;
+    totalScore4 = 0;
+    totalScore5 = 0;
+    totalScore6 = 0;
+    totalScore7 = 0;
+    totalScore8 = 0;
+    totalScore9 = 0;
+    totalScore10 = 0;
+    totalScore11 = 0;
+    runsConceded1 = 0;
+    runsConceded2 = 0;
+    runsConceded3 = 0;
+    runsConceded4 = 0;
+    runsConceded5 = 0;
+    tOvers = 0;
+    overs1 = 0;
+    overs2 = 0;
+    overs3 = 0;
+    overs4 = 0;
+    overs5 = 0; 
+    wickets1 = 0;
+    wickets2 = 0;
+    wickets3 = 0;
+    wickets4 = 0;
+    wickets5 = 0;
+    ballsFaced1 = 0;
+    ballsFaced2 = 0;
+    ballsFaced3 = 0;
+    ballsFaced4 = 0;
+    ballsFaced5 = 0;
+    ballsFaced6 = 0;
+    ballsFaced7 = 0;
+    ballsFaced8 = 0;
+    ballsFaced9 = 0;
+    ballsFaced10 = 0;
+    ballsFaced11 = 0;
+    
+    batsmanID1 = 0;
+    batsmanID2 = 0;
+    batsmanID3 = 0;
+    batsmanID4 = 0;
+    batsmanID5 = 0;
+    batsmanID6 = 0;
+    batsmanID7 = 0;
+    batsmanID8 = 0;
+    batsmanID9 = 0;
+    batsmanID10 = 0;
+    batsmanID11 = 0;
+    
+    bowlersID1 = 0;
+    bowlersID2 = 0;
+    bowlersID3 = 0;
+    bowlersID4 = 0;
+    bowlersID5 = 0;
+    
+    batsmanOrder = 1;
+    bowlerOrder = 1;
+    
+       txtRunstoWin.setText(txtOverallScore1.getText());
+       txtAddFirstName.setText("");
+       txtAddLastName.setText("");
+       btnAdd.setEnabled(true);
+       txtBat1FirstName.setText("");
+       txtBat2FirstName.setText("");
+       txtBat3FirstName.setText("");
+       txtBat4FirstName.setText("");
+       txtBat5FirstName.setText("");
+       txtBat6FirstName.setText("");
+       txtBat7FirstName.setText("");
+       txtBat8FirstName.setText("");
+       txtBat9FirstName.setText("");
+       txtBat10FirstName.setText("");
+       txtBat11FirstName.setText("");
+       txtBat1LastName.setText("");
+       txtBat2LastName.setText("");
+       txtBat3LastName.setText("");
+       txtBat4LastName.setText("");
+       txtBat5LastName.setText("");
+       txtBat6LastName.setText("");
+       txtBat7LastName.setText("");
+       txtBat8LastName.setText("");
+       txtBat9LastName.setText("");
+       txtBat10LastName.setText("");
+       txtBat11LastName.setText("");
+       txtBat1TotalScore.setText("0");
+       txtBat2TotalScore.setText("0");
+       txtBat3TotalScore.setText("0");
+       txtBat4TotalScore.setText("0");
+       txtBat5TotalScore.setText("0");
+       txtBat6TotalScore.setText("0");
+       txtBat7TotalScore.setText("0");
+       txtBat8TotalScore.setText("0");
+       txtBat9TotalScore.setText("0");
+       txtBat10TotalScore.setText("0");
+       txtBat11TotalScore.setText("0");
+       txtBallsFaced1.setText("0");
+       txtBallsFaced2.setText("0");  
+       txtBallsFaced3.setText("0");  
+       txtBallsFaced4.setText("0");  
+       txtBallsFaced5.setText("0");  
+       txtBallsFaced6.setText("0");  
+       txtBallsFaced7.setText("0");  
+       txtBallsFaced8.setText("0");  
+       txtBallsFaced9.setText("0");  
+       txtBallsFaced10.setText("0");  
+       txtBallsFaced11.setText("0");
+       rbnBat1.setVisible(true);
+       rbnBat1.setEnabled(false);
+       rbnBat1.setSelected(false);
+       rbnBat2.setVisible(true);
+       rbnBat2.setEnabled(false);
+       rbnBat2.setSelected(false);
+       rbnBat3.setVisible(true);
+       rbnBat3.setEnabled(false);
+       rbnBat3.setSelected(false);
+       rbnBat4.setVisible(true);
+       rbnBat4.setEnabled(false);
+       rbnBat4.setSelected(false);
+       rbnBat5.setVisible(true);
+       rbnBat5.setEnabled(false);
+       rbnBat5.setSelected(false);
+       rbnBat6.setVisible(true);
+       rbnBat6.setEnabled(false);
+       rbnBat6.setSelected(false);
+       rbnBat7.setVisible(true);
+       rbnBat7.setEnabled(false);
+       rbnBat7.setSelected(false);
+       rbnBat8.setVisible(true);
+       rbnBat8.setEnabled(false);
+       rbnBat8.setSelected(false);
+       rbnBat9.setVisible(true);
+       rbnBat9.setEnabled(false);
+       rbnBat9.setSelected(false);
+       rbnBat10.setVisible(true);
+       rbnBat10.setEnabled(false);
+       rbnBat10.setSelected(false);
+       rbnBat11.setVisible(true);
+       rbnBat11.setEnabled(false);
+       rbnBat11.setSelected(false);
+       rbnBowler1.setSelected(false);
+       rbnBowler1.setEnabled(false);
+       rbnBowler2.setSelected(false); 
+       rbnBowler2.setEnabled(false);
+       rbnBowler3.setSelected(false); 
+       rbnBowler3.setEnabled(false);
+       rbnBowler4.setSelected(false);
+       rbnBowler4.setEnabled(false);
+       rbnBowler5.setSelected(false);
+       rbnBowler5.setEnabled(false);
+       txtBowFirstName1.setText("");
+       txtBowFirstName2.setText("");
+       txtBowFirstName3.setText("");
+       txtBowFirstName4.setText("");
+       txtBowFirstName5.setText("");
+       txtBowLastName1.setText("");
+       txtBowLastName2.setText("");
+       txtBowLastName3.setText("");
+       txtBowLastName4.setText("");
+       txtBowLastName5.setText("");
+       txtBowRunsConceded1.setText("0");
+       txtBowRunsConceded2.setText("0");
+       txtBowRunsConceded3.setText("0");
+       txtBowRunsConceded4.setText("0");
+       txtBowRunsConceded5.setText("0");
+       txtBowOversBowled1.setText("0");
+       txtBowOversBowled2.setText("0");
+       txtBowOversBowled3.setText("0");
+       txtBowOversBowled4.setText("0");
+       txtBowOversBowled5.setText("0");
+       txtBowWickets1.setText("0");
+       txtBowWickets2.setText("0");
+       txtBowWickets3.setText("0");
+       txtBowWickets4.setText("0");
+       txtBowWickets5.setText("0");
+       txtBowAddFName.setText("");
+       txtBowAddLName.setText("");
+       btnAddBowler.setEnabled(false);
+       txtOverallScore1.setText("0");
+       txtTotalWickets1.setText("0");
+       txtTotalOvers1.setText("0");
+       isFirstInnings = false;
+       btnSecondInn.setVisible(false);
+       
+       String mID = txtMatchID.getText();
         
+        CredentialsProvider provider = new BasicCredentialsProvider();
+        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials (username, password);
+        provider.setCredentials(AuthScope.ANY, credentials);
+       
+       TotalScore totalscore2 = null;
+        TotalScore totalscore = null;
+        
+           try
+        {
+            HttpClient client = HttpClientBuilder.create()
+                .setDefaultCredentialsProvider(provider)
+                .build();
+            
+        HttpPost request = new HttpPost("http://localhost:8080/totalscore/add");
+        
+        Gson gson = new Gson();
+        TotalScore tScore = new TotalScore();
+        tScore.setMatchID(mID);
+        tScore.setTotalScore("0");
+        tScore.setTotalWickets("0");
+        tScore.setTotalOvers("0");
+        
+        String jsonInString = gson.toJson(tScore);
+        
+        StringEntity entity = new StringEntity(jsonInString);
+        request.setEntity(entity);
+        request.setHeader("Accept", "application/json");
+        request.setHeader("Content-type", "application/json");
+        
+        
+        HttpResponse response = client.execute(request);
+        
+        String batScore = EntityUtils.toString(response.getEntity());
+        Gson tscoreGson = new Gson();// TODO add your handling code here:
+        totalscore2 = tscoreGson.fromJson(batScore, TotalScore.class);
+        
+        
+        if (response.getStatusLine().getStatusCode() == 204)
+        {
+            JOptionPane.showMessageDialog(null,"Please enter all fields");
+        }
+       
+        
+        
+        }
+        
+        catch(Exception e)
+        {
+            
+        }
+           
+       try
+       {
+           HttpClient client = HttpClientBuilder.create()
+                 .setDefaultCredentialsProvider(provider)
+                .build();
+        HttpGet request = new HttpGet("http://localhost:8080/totalscore/find/" + totalscore2.getTotalScoreID()); 
+        HttpResponse response = client.execute(request);
+        
+        String json = EntityUtils.toString(response.getEntity());
+        Gson gson = new Gson();// TODO add your handling code here:
+        totalscore = gson.fromJson(json, TotalScore.class);
+        totalScoreID = totalscore.getTotalScoreID();
+           
+       }
+       catch (Exception e)
+       {
+           
+       }
+       
     }//GEN-LAST:event_btnSecondInnActionPerformed
 
-    private void readyFunction() {
+    private boolean readyFunction() {
         
         
     
-        if (rbnBat1.isSelected() || rbnBat2.isSelected() || rbnBat3.isSelected()
+        if ((rbnBat1.isSelected() || rbnBat2.isSelected() || rbnBat3.isSelected()
                 || rbnBat4.isSelected() || rbnBat5.isSelected() || rbnBat6.isSelected()
                 || rbnBat7.isSelected() || rbnBat8.isSelected() || rbnBat9.isSelected()
-                || rbnBat10.isSelected() || rbnBat11.isSelected() && rbnBowler1.isSelected()
+                || rbnBat10.isSelected() || rbnBat11.isSelected()) && (rbnBowler1.isSelected()
                       || rbnBowler2.isSelected() || rbnBowler3.isSelected()
-                || rbnBowler4.isSelected() || rbnBowler5.isSelected())
+                || rbnBowler4.isSelected() || rbnBowler5.isSelected()))
           
         {       
             updateButton.setEnabled(true);
             btnReady.setEnabled(false);
+            return true;
         }   
         
-        else 
-            JOptionPane.showMessageDialog(null, "Please select batsman and/or bowler!");
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please make sure batsman AND bowler is selected!");
+            return false;
+            
+        }
               
     }
+    
     /**
      * @param args the command line arguments
      */
